@@ -52,14 +52,25 @@ function calcDisc(){
 function pct(){
   const g=id=>parseFloat(document.getElementById(id).value);
   const s=(id,v)=>{const e=document.getElementById(id);e.innerHTML=v;e.style.display='block'};
-  let a=g('p1a'),b=g('p1b');if(!isNaN(a)&&!isNaN(b))s('p1r',`Answer: <b>${(a*b/100).toLocaleString()}</b>`);
-  a=g('p2a');b=g('p2b');if(!isNaN(a)&&!isNaN(b)&&b!==0)s('p2r',`Answer: <b>${(a/b*100).toFixed(2)}%</b>`);
-  a=g('p3a');b=g('p3b');if(!isNaN(a)&&!isNaN(b)&&a!==0)s('p3r',`Change: <b>${(((b-a)/Math.abs(a))*100).toFixed(2)}%</b> ${b>=a?'📈 increase':'📉 decrease'}`);
+  const h=id=>{document.getElementById(id).style.display='none'};
+  let a=g('p1a'),b=g('p1b');if(!isNaN(a)&&!isNaN(b))s('p1r',`Answer: <b>${(a*b/100).toLocaleString()}</b>`);else h('p1r');
+  a=g('p2a');b=g('p2b');if(!isNaN(a)&&!isNaN(b)&&b!==0)s('p2r',`Answer: <b>${(a/b*100).toFixed(2)}%</b>`);else h('p2r');
+  a=g('p3a');b=g('p3b');if(!isNaN(a)&&!isNaN(b)&&a!==0)s('p3r',`Change: <b>${(((b-a)/Math.abs(a))*100).toFixed(2)}%</b> ${b>=a?'📈 increase':'📉 decrease'}`);else h('p3r');
 }
 ['p1a','p1b','p2a','p2b','p3a','p3b'].forEach(id=>document.getElementById(id).addEventListener('input',pct));
 function addGpaRow(){
   const c=document.querySelector('.gpaRow').cloneNode(true);
   document.getElementById('gpaRows').appendChild(c);
+}
+function removeGpaRow(btn){
+  const row=btn.closest?btn.closest('.gpaRow'):btn.parentNode;
+  if(row&&document.querySelectorAll('.gpaRow').length>1)row.remove();
+}
+function resetGpa(){
+  const w=document.getElementById('gpaRows'),rows=()=>w.querySelectorAll('.gpaRow');
+  rows().slice(3).forEach(r=>r.remove());
+  while(rows().length<3)addGpaRow();
+  rows().forEach(r=>{r.querySelector('.gpaGrade').value='3';r.querySelector('.gpaCredit').value='3'});
 }
 function calcGpa(){
   let pts=0,cr=0;
@@ -94,17 +105,20 @@ function copyCase(){
 function compressImg(){
   const f=document.getElementById('imgFile').files[0],q=document.getElementById('imgQ').value/100,r=document.getElementById('imgResult');
   if(!f){alert('Choose an image first');return}
+  if(!f.type.startsWith('image/')){alert('That file is not an image');return}
   const img=new Image(),url=URL.createObjectURL(f);
   img.onload=()=>{
     const c=document.createElement('canvas'),max=1600;
     let w=img.width,h=img.height;
     if(w>max||h>max){const k=Math.min(max/w,max/h);w*=k;h*=k}
     c.width=w;c.height=h;
-    c.getContext('2d').drawImage(img,0,0,w,h);
+    const x=c.getContext('2d');
+    x.fillStyle='#fff';x.fillRect(0,0,w,h);
+    x.drawImage(img,0,0,w,h);
     c.toBlob(b=>{
       const a=document.createElement('a');
       a.href=URL.createObjectURL(b);a.download=f.name.replace(/\.\w+$/,'')+'-compressed.jpg';a.click();
-      r.innerHTML=`Done ✅ <b>${(f.size/1024).toFixed(0)} KB</b> → <b>${(b.size/1024).toFixed(0)} KB</b> (${Math.round((1-b.size/f.size)*100)}% smaller)`;
+      r.innerHTML=b.size<f.size?`Done ✅ <b>${(f.size/1024).toFixed(0)} KB</b> → <b>${(b.size/1024).toFixed(0)} KB</b> (${Math.round((1-b.size/f.size)*100)}% smaller)`:`Saved as JPG ✅ <b>${(f.size/1024).toFixed(0)} KB</b> → <b>${(b.size/1024).toFixed(0)} KB</b> — already well optimized at this quality`;
       r.style.display='block';
       URL.revokeObjectURL(url);
     },'image/jpeg',q);
@@ -123,7 +137,7 @@ function genPass(){
 }
 function copyPw(){
   const t=document.getElementById('pwOut').textContent;
-  if(t==='Click generate ↓')return;
+  if(t==='Click generate ↓'||t==='Copied ✅')return;
   navigator.clipboard.writeText(t).then(()=>{document.getElementById('pwOut').textContent='Copied ✅';setTimeout(genPass,800)});
 }
 function diffDates(){

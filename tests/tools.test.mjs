@@ -149,6 +149,9 @@ $('p2a').value = '45'; $('p2b').value = '200'; ctx.pct();
 t('percent: X is what % of Y', $('p2r').innerHTML.includes('<b>22.50%</b>'));
 $('p3a').value = '80'; $('p3b').value = '100'; ctx.pct();
 t('percent: % change increase', $('p3r').innerHTML.includes('<b>25.00%</b>') && $('p3r').innerHTML.includes('📈'));
+$('p1a').value = ''; ctx.pct();
+t('percent: incomplete input hides stale result', !show('p1r'));
+$('p1a').value = '10';
 
 ctx.addGpaRow();
 const cloneRow = gpaRows.children[3];
@@ -163,6 +166,21 @@ gpaRows.children.forEach(r => { r.querySelector('.gpaCredit').value = '0'; });
 alerts.length = 0; ctx.calcGpa();
 t('gpa: zero credits warns', alerts.some(a => a.includes('course')));
 gpaRows.children.forEach(r => { r.querySelector('.gpaCredit').value = '3'; });
+ctx.addGpaRow(); ctx.addGpaRow();
+t('gpa: rows can be added beyond 3', gpaRows.children.length === 6);
+ctx.resetGpa();
+t('gpa: reset trims back to 3 rows', gpaRows.children.length === 3);
+t('gpa: reset restores default grade+credits', [...gpaRows.children].every(r => r.querySelector('.gpaGrade').value === '3' && r.querySelector('.gpaCredit').value === '3'));
+const rmvBtn = new El('button'); rmvBtn.parentNode = gpaRows.children[2];
+ctx.removeGpaRow(rmvBtn);
+t('gpa: × removes a course row', gpaRows.children.length === 2);
+const rmvBtn2 = new El('button'); rmvBtn2.parentNode = gpaRows.children[0];
+ctx.removeGpaRow(rmvBtn2);
+const rmvBtn3 = new El('button'); rmvBtn3.parentNode = gpaRows.children[0];
+ctx.removeGpaRow(rmvBtn3);
+t('gpa: cannot remove the last remaining row', gpaRows.children.length === 1);
+ctx.resetGpa();
+t('gpa: refill after removal restores 3 default rows', gpaRows.children.length === 3 && gpaRows.children.every(r => r.querySelector('.gpaCredit').value === '3'));
 
 $('wcInput').value = 'Hello world. This is a test!'; ctx.countWords();
 t('word counter: 6 words', $('stWords').textContent === '6');
@@ -180,6 +198,9 @@ ctx.convertCase('sentence'); t('case: Sentence case', $('caseInput').value === '
 
 alerts.length = 0; ctx.compressImg();
 t('image compressor: guards missing file', alerts.some(a => a.includes('image')));
+el('imgFile').files = [{ type: 'text/plain', size: 100 }]; alerts.length = 0; ctx.compressImg();
+t('image compressor: rejects non-image files', alerts.some(a => a.includes('not an image')));
+el('imgFile').files = [];
 
 ['pwUpp','pwNum','pwSym'].forEach(id => $(id).checked = true);
 $('pwLen').value = '16'; ctx.genPass();
@@ -194,6 +215,8 @@ t('password: cryptographically random (two runs differ)', pw !== pw2);
 t('password: charset narrows when boxes unchecked', /^[a-z]{40}$/.test($('pwOut').textContent));
 clipboardCalled = false; $('pwOut').textContent = 'Click generate ↓'; ctx.copyPw();
 t('password: copy guards placeholder state', !clipboardCalled);
+clipboardCalled = false; $('pwOut').textContent = 'Copied ✅'; ctx.copyPw();
+t('password: copy guards copied state', !clipboardCalled);
 
 alerts.length = 0; $('dFrom').value = ''; $('dTo').value = ''; ctx.diffDates();
 t('date diff: missing dates warn', alerts.length > 0);

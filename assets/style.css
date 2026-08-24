@@ -43,6 +43,8 @@
   .stat .t{font-size:12px;color:var(--muted);margin-top:2px}
   .row{display:flex;gap:12px;flex-wrap:wrap}
   .row>*{flex:1;min-width:140px}
+  .rmv{flex:0 0 42px;min-width:42px;height:46px;border:1px solid var(--line);background:#fbfcfe;border-radius:10px;font-size:20px;color:var(--muted);cursor:pointer;line-height:1;align-self:center}
+  .rmv:hover{border-color:#e74c3c;color:#e74c3c;background:#fff5f5}
   .range{width:100%;accent-color:var(--brand)}
   .chips{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
   .chip{border:1px solid var(--line);background:#fbfcfe;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;cursor:pointer}
