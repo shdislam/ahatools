@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tip Calculator – Bill Splitting With Tip Per Person</title>
+<meta name="description" content="Calculate tip and split any restaurant bill between friends in seconds. Quick tip chips for 5%, 10%, 15% and 20%.">
+<meta name="author" content="AHA!">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#6c5ce7">
+<link rel="canonical" href="https://ahatools.pages.dev/tip-calculator/">
+<meta property="og:title" content="Tip Calculator — Free Online Tool">
+<meta property="og:description" content="Calculate tip and split any restaurant bill between friends in seconds. Quick tip chips for 5%, 10%, 15% and 20%.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ahatools.pages.dev/tip-calculator/">
+<meta property="og:site_name" content="AhaTools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tip Calculator">
+<meta name="twitter:description" content="Calculate tip and split any restaurant bill between friends in seconds. Quick tip chips for 5%, 10%, 15% and 20%.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Tip Calculator","url":"https://ahatools.pages.dev/tip-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate tip and split any restaurant bill between friends in seconds. Quick tip chips for 5%, 10%, 15% and 20%."}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="../">Aha<span>Tools</span> ⚡</a>
+    <a class="logo" href="https://www.youtube.com/@Shahid-Ul-Islam-z5l" style="font-size:14px;color:var(--muted)">▶ YouTube</a>
+  </div>
+</header>
+<main class="wrap">
+<div class="panel"><a class="back" href="../">← All tools</a>
+  <div class="panel">
+    <h1>🍽️ Tip Calculator</h1>
+    <p class="sub">Bill splitting with tip, done in seconds.</p>
+    <div class="row">
+      <div><label>Bill amount</label><input type="number" id="tipBill" placeholder="1500"></div>
+      <div><label>People</label><input type="number" id="tipPeople" value="2" min="1"></div>
+    </div>
+    <label>Tip: <span id="tipVal">10</span>%</label>
+    <input type="range" class="range" id="tipPct" min="0" max="30" value="10" oninput="document.getElementById('tipVal').textContent=this.value">
+    <div class="chips">
+      <button class="chip" onclick="setTip(5)">5%</button>
+      <button class="chip" onclick="setTip(10)">10%</button>
+      <button class="chip" onclick="setTip(15)">15%</button>
+      <button class="chip" onclick="setTip(20)">20%</button>
+    </div>
+    <button class="btn" onclick="calcTip()">Calculate</button>
+    <div class="result" id="tipResult"></div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>Dinner with friends shouldn't end with five people doing mental math over one receipt. Enter the bill, choose tip %, set how many are splitting — everyone sees their exact share including tip in one number.</p>
+      <h3>How to use it</h3>
+      <ol>
+        <li>Enter total bill amount and number of people.</li>
+        <li>Slide the tip (or tap 5/10/15/20% quick chips).</li>
+        <li>Per-person amount shows instantly — no rounding arguments left.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">How much should I tip?</p>
+      <p>It's cultural: 15–20% is standard at US restaurants; in many countries including Bangladesh service is included and tipping is optional appreciation for good service. The slider covers whatever your situation calls for.</p>
+      <p class="q">Should the tip be split equally?</p>
+      <p>Equal splitting per person is the default here because it's how groups usually settle. If one person ordered significantly more, calculate their share separately with our <a href="#percentage-calculator">Percentage Calculator</a>.</p>
+    </div>
+  </div></div>
+<nav class="map" aria-label="More tools"><h2>More free tools</h2><a href="../age-calculator/">🎂 Age Calculator</a>
+<a href="../bmi-calculator/">⚖️ BMI Calculator</a>
+<a href="../loan-calculator/">🏦 Loan EMI Calculator</a>
+<a href="../discount-calculator/">🏷️ Discount Calculator</a>
+<a href="../percentage-calculator/">％ Percentage Calculator</a>
+<a href="../gpa-calculator/">🎓 GPA Calculator</a><a href="../">View all 13 →</a></nav>
+</main>
+<footer>Built with ⚡ by AHA! · <a href="https://www.youtube.com/@Shahid-Ul-Islam-z5l" style="color:var(--brand)">Watch tutorials on YouTube</a></footer>
+<script src="../assets/app.js"></script>
+<script>if(typeof fillUnits==='function'&&document.getElementById('ucType'))fillUnits();</script>
+</body>
+</html>

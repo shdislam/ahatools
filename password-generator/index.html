@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Generator – Strong Random Passwords Offline</title>
+<meta name="description" content="Generate cryptographically strong passwords using the Web Crypto API, entirely offline. Choose length and character sets. Nothing is stored.">
+<meta name="author" content="AHA!">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#6c5ce7">
+<link rel="canonical" href="https://ahatools.pages.dev/password-generator/">
+<meta property="og:title" content="Password Generator — Free Online Tool">
+<meta property="og:description" content="Generate cryptographically strong passwords using the Web Crypto API, entirely offline. Choose length and character sets. Nothing is stored.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ahatools.pages.dev/password-generator/">
+<meta property="og:site_name" content="AhaTools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Password Generator">
+<meta name="twitter:description" content="Generate cryptographically strong passwords using the Web Crypto API, entirely offline. Choose length and character sets. Nothing is stored.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Password Generator","url":"https://ahatools.pages.dev/password-generator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generate cryptographically strong passwords using the Web Crypto API, entirely offline. Choose length and character sets. Nothing is stored."}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="../">Aha<span>Tools</span> ⚡</a>
+    <a class="logo" href="https://www.youtube.com/@Shahid-Ul-Islam-z5l" style="font-size:14px;color:var(--muted)">▶ YouTube</a>
+  </div>
+</header>
+<main class="wrap">
+<div class="panel"><a class="back" href="../">← All tools</a>
+  <div class="panel">
+    <h1>🔐 Password Generator</h1>
+    <p class="sub">Generated with cryptographic randomness, on your device only.</p>
+    <label>Length: <span id="pwLenVal">16</span> characters</label>
+    <input type="range" class="range" id="pwLen" min="8" max="40" value="16" oninput="document.getElementById('pwLenVal').textContent=this.value">
+    <div class="checks">
+      <label><input type="checkbox" id="pwUpp" checked> ABC</label>
+      <label><input type="checkbox" id="pwNum" checked> 123</label>
+      <label><input type="checkbox" id="pwSym" checked> #$%</label>
+    </div>
+    <div class="pwbox" id="pwOut">Click generate ↓</div>
+    <button class="btn btn-sm" onclick="genPass()">🎲 Generate</button>
+    <button class="btn btn-sm" onclick="copyPw()">📋 Copy</button>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>Weak passwords are behind most account takeovers. This generator uses your browser's cryptographic random number generator (Web Crypto API) — the same standard used by security software — and creates passwords that never leave your device because there's no server to send them to.</p>
+      <h3>How to make a strong password here</h3>
+      <ol>
+        <li>Keep length at 16+ characters — length beats complexity every time.</li>
+        <li>Leave all character sets checked for maximum strength.</li>
+        <li>Generate → Copy → paste into the site's password field. Save it in a password manager.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">Is this password stored anywhere?</p>
+      <p>No. It exists only in your browser tab's memory until you close it. There's no logging, no server, no database — verify by going offline: it still works identically.</p>
+      <p class="q">Can hackers guess crypto-random passwords?</p>
+      <p>Not practically. A 16-character random password has ~10²⁵ combinations; at a trillion guesses per second that's over 80 million years of average search time.</p>
+    </div>
+  </div></div>
+<nav class="map" aria-label="More tools"><h2>More free tools</h2><a href="../age-calculator/">🎂 Age Calculator</a>
+<a href="../bmi-calculator/">⚖️ BMI Calculator</a>
+<a href="../loan-calculator/">🏦 Loan EMI Calculator</a>
+<a href="../discount-calculator/">🏷️ Discount Calculator</a>
+<a href="../percentage-calculator/">％ Percentage Calculator</a>
+<a href="../gpa-calculator/">🎓 GPA Calculator</a><a href="../">View all 13 →</a></nav>
+</main>
+<footer>Built with ⚡ by AHA! · <a href="https://www.youtube.com/@Shahid-Ul-Islam-z5l" style="color:var(--brand)">Watch tutorials on YouTube</a></footer>
+<script src="../assets/app.js"></script>
+<script>if(typeof fillUnits==='function'&&document.getElementById('ucType'))fillUnits();</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan EMI Calculator – Monthly Payment & Total Interest</title>
+<meta name="description" content="Calculate your loan EMI before you borrow. Monthly payment, total repayment and total interest for any amount, rate and duration.">
+<meta name="author" content="AHA!">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#6c5ce7">
+<link rel="canonical" href="https://ahatools.pages.dev/loan-calculator/">
+<meta property="og:title" content="Loan EMI Calculator — Free Online Tool">
+<meta property="og:description" content="Calculate your loan EMI before you borrow. Monthly payment, total repayment and total interest for any amount, rate and duration.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ahatools.pages.dev/loan-calculator/">
+<meta property="og:site_name" content="AhaTools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Loan EMI Calculator">
+<meta name="twitter:description" content="Calculate your loan EMI before you borrow. Monthly payment, total repayment and total interest for any amount, rate and duration.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Loan EMI Calculator","url":"https://ahatools.pages.dev/loan-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate your loan EMI before you borrow. Monthly payment, total repayment and total interest for any amount, rate and duration."}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="../">Aha<span>Tools</span> ⚡</a>
+    <a class="logo" href="https://www.youtube.com/@Shahid-Ul-Islam-z5l" style="font-size:14px;color:var(--muted)">▶ YouTube</a>
+  </div>
+</header>
+<main class="wrap">
+<div class="panel"><a class="back" href="../">← All tools</a>
+  <div class="panel">
+    <h1>🏦 Loan EMI Calculator</h1>
+    <p class="sub">See your exact monthly payment before you borrow.</p>
+    <div class="row">
+      <div><label>Loan amount</label><input type="number" id="loanP" placeholder="500000"></div>
+      <div><label>Interest rate (% per year)</label><input type="number" id="loanR" step="0.1" placeholder="9"></div>
+      <div><label>Duration (years)</label><input type="number" id="loanY" placeholder="5"></div>
+    </div>
+    <button class="btn" onclick="calcEmi()">Calculate EMI</button>
+    <div class="result" id="emiResult"></div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>EMI (Equated Monthly Instalment) is the fixed amount you pay a bank every month on a loan. This calculator shows that payment before you sign anything — plus the total interest you'll pay over the full duration, which banks don't highlight upfront.</p>
+      <h3>How to use it</h3>
+      <ol>
+        <li>Enter loan amount, annual interest rate and duration in years.</li>
+        <li>Check the monthly EMI — compare it against your monthly income (most advisors say keep it under 40%).</li>
+        <li>Look at <em>Total interest</em>: try shortening the duration and watch how much money it saves.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">What is the EMI formula?</p>
+      <p>EMI = P × r × (1+r)ⁿ ÷ ((1+r)ⁿ − 1), where P = principal, r = monthly rate (annual ÷ 12 ÷ 100), n = months. It's the standard reducing-balance formula used by banks worldwide.</p>
+      <p class="q">How can I pay less interest overall?</p>
+      <p>Two proven levers: shorter tenure (biggest saving) and prepayments early in the loan, when most of each EMI is still interest. Compare scenarios above before committing.</p>
+    </div>
+  </div></div>
+<nav class="map" aria-label="More tools"><h2>More free tools</h2><a href="../age-calculator/">🎂 Age Calculator</a>
+<a href="../bmi-calculator/">⚖️ BMI Calculator</a>
+<a href="../discount-calculator/">🏷️ Discount Calculator</a>
+<a href="../percentage-calculator/">％ Percentage Calculator</a>
+<a href="../gpa-calculator/">🎓 GPA Calculator</a>
+<a href="../word-counter/">📝 Word Counter</a><a href="../">View all 13 →</a></nav>
+</main>
+<footer>Built with ⚡ by AHA! · <a href="https://www.youtube.com/@Shahid-Ul-Islam-z5l" style="color:var(--brand)">Watch tutorials on YouTube</a></footer>
+<script src="../assets/app.js"></script>
+<script>if(typeof fillUnits==='function'&&document.getElementById('ucType'))fillUnits();</script>
+</body>
+</html>

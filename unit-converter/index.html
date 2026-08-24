@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit Converter – Length & Weight With Exact Factors</title>
+<meta name="description" content="Convert length and weight units with internationally exact factors: meters, km, miles, inches, kg, pounds, ounces and more.">
+<meta name="author" content="AHA!">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#6c5ce7">
+<link rel="canonical" href="https://ahatools.pages.dev/unit-converter/">
+<meta property="og:title" content="Unit Converter — Free Online Tool">
+<meta property="og:description" content="Convert length and weight units with internationally exact factors: meters, km, miles, inches, kg, pounds, ounces and more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ahatools.pages.dev/unit-converter/">
+<meta property="og:site_name" content="AhaTools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Unit Converter">
+<meta name="twitter:description" content="Convert length and weight units with internationally exact factors: meters, km, miles, inches, kg, pounds, ounces and more.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Unit Converter","url":"https://ahatools.pages.dev/unit-converter/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert length and weight units with internationally exact factors: meters, km, miles, inches, kg, pounds, ounces and more."}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="../">Aha<span>Tools</span> ⚡</a>
+    <a class="logo" href="https://www.youtube.com/@Shahid-Ul-Islam-z5l" style="font-size:14px;color:var(--muted)">▶ YouTube</a>
+  </div>
+</header>
+<main class="wrap">
+<div class="panel"><a class="back" href="../">← All tools</a>
+  <div class="panel">
+    <h1>📏 Unit Converter</h1>
+    <p class="sub">Convert length and weight instantly.</p>
+    <label>Type</label>
+    <select id="ucType" onchange="fillUnits()">
+      <option value="length">Length</option>
+      <option value="weight">Weight</option>
+    </select>
+    <div class="row">
+      <div><label>From</label><select id="ucFrom"></select></div>
+      <div><label>To</label><select id="ucTo"></select></div>
+    </div>
+    <label>Value</label>
+    <input type="number" id="ucVal" placeholder="1">
+    <button class="btn" onclick="convertUnits()">Convert</button>
+    <div class="result" id="ucResult"></div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>Converts length (m, km, cm, mm, mile, foot, inch, yard) and weight (kg, g, lb, oz, tonne) using internationally exact factors — not rounded approximations — so results match engineering and shipping requirements.</p>
+      <h3>How to use it</h3>
+      <ol>
+        <li>Pick Length or Weight.</li>
+        <li>Choose the from/to units and enter a value.</li>
+        <li>Result appears with up to 6 decimal places of precision.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">What conversion factors are used?</p>
+      <p>The exact international ones: 1 inch = 0.0254 m, 1 mile = 1609.344 m, 1 lb = 0.45359237 kg, 1 oz = 0.028349523 kg — same values defined by NIST standards.</p>
+      <p class="q">Why do other sites show slightly different numbers?</p>
+      <p>They round the factors first (like 1 lb ≈ 0.454), which introduces error that grows with big values. This tool converts from exact base units instead.</p>
+    </div>
+  </div></div>
+<nav class="map" aria-label="More tools"><h2>More free tools</h2><a href="../age-calculator/">🎂 Age Calculator</a>
+<a href="../bmi-calculator/">⚖️ BMI Calculator</a>
+<a href="../loan-calculator/">🏦 Loan EMI Calculator</a>
+<a href="../discount-calculator/">🏷️ Discount Calculator</a>
+<a href="../percentage-calculator/">％ Percentage Calculator</a>
+<a href="../gpa-calculator/">🎓 GPA Calculator</a><a href="../">View all 13 →</a></nav>
+</main>
+<footer>Built with ⚡ by AHA! · <a href="https://www.youtube.com/@Shahid-Ul-Islam-z5l" style="color:var(--brand)">Watch tutorials on YouTube</a></footer>
+<script src="../assets/app.js"></script>
+<script>if(typeof fillUnits==='function'&&document.getElementById('ucType'))fillUnits();</script>
+</body>
+</html>

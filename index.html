@@ -3,37 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AhaTools — 13 Free Online Tools: Age, BMI, Loan EMI, GPA, Password Generator & More</title>
+<title>AhaTools — 13 Free Online Tools: Calculators, Converters & Generators</title>
 <meta name="description" content="13 powerful free online tools — age calculator, BMI checker, loan EMI calculator, GPA calculator, word counter, discount calculator, password generator, image compressor and more. No signup, mobile-friendly.">
-<meta name="keywords" content="age calculator, bmi calculator, loan emi calculator, gpa calculator, word counter, percentage calculator, discount calculator, tip calculator, password generator, image compressor, unit converter, days between dates, free online tools">
 <meta name="author" content="AHA!">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#6c5ce7">
-<link rel="canonical" href="https://ahatools.netlify.app/">
-<meta property="og:title" content="AhaTools — 13 Free Online Tools">
-<meta property="og:description" content="Age calculator, BMI, loan EMI, GPA calculator, password generator, image compressor and more. Free forever, no signup.">
+<link rel="canonical" href="https://ahatools.pages.dev/">
+<meta property="og:title" content="AhaTools — Free Online Tool">
+<meta property="og:description" content="Free calculators and utilities that work instantly in your browser.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ahatools.netlify.app/">
+<meta property="og:url" content="https://ahatools.pages.dev/">
 <meta property="og:site_name" content="AhaTools">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AhaTools — 13 Free Online Tools">
+<meta name="twitter:title" content="AhaTools">
 <meta name="twitter:description" content="Free calculators and utilities that work instantly in your browser.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": "WebSite",
   "name": "AhaTools",
-  "url": "https://ahatools.netlify.app/",
-  "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Any",
-  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-  "description": "Free online tools: age calculator, BMI calculator, loan EMI calculator, GPA calculator, word counter, percentage calculator, discount calculator, tip calculator, password generator, image compressor, unit converter, days between dates and case converter.",
-  "featureList": [
-    "Age Calculator","BMI Calculator","Word Counter","Percentage Calculator","Image Compressor",
-    "Unit Converter","Loan EMI Calculator","Discount Calculator","Tip Calculator","GPA Calculator",
-    "Days Between Dates","Password Generator","Case Converter"
-  ]
+  "url": "https://ahatools.pages.dev/",
+  "description": "13 free online tools: calculators, converters, generators and privacy-first utilities.",
+  "hasPart": [{"@type":"WebApplication","name":"Age Calculator","url":"https://ahatools.pages.dev/age-calculator/"},{"@type":"WebApplication","name":"BMI Calculator","url":"https://ahatools.pages.dev/bmi-calculator/"},{"@type":"WebApplication","name":"Loan EMI Calculator","url":"https://ahatools.pages.dev/loan-calculator/"},{"@type":"WebApplication","name":"Discount Calculator","url":"https://ahatools.pages.dev/discount-calculator/"},{"@type":"WebApplication","name":"Percentage Calculator","url":"https://ahatools.pages.dev/percentage-calculator/"},{"@type":"WebApplication","name":"GPA Calculator","url":"https://ahatools.pages.dev/gpa-calculator/"},{"@type":"WebApplication","name":"Word Counter","url":"https://ahatools.pages.dev/word-counter/"},{"@type":"WebApplication","name":"Case Converter","url":"https://ahatools.pages.dev/case-converter/"},{"@type":"WebApplication","name":"Image Compressor","url":"https://ahatools.pages.dev/image-compressor/"},{"@type":"WebApplication","name":"Password Generator","url":"https://ahatools.pages.dev/password-generator/"},{"@type":"WebApplication","name":"Days Between Dates","url":"https://ahatools.pages.dev/days-between-dates/"},{"@type":"WebApplication","name":"Unit Converter","url":"https://ahatools.pages.dev/unit-converter/"},{"@type":"WebApplication","name":"Tip Calculator","url":"https://ahatools.pages.dev/tip-calculator/"}]
 }
 </script>
 <script type="application/ld+json">
@@ -44,120 +37,44 @@
     {"@type": "Question", "name": "Are these tools really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every tool on AhaTools is 100% free with no signup required."}},
     {"@type": "Question", "name": "Is my data safe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All calculations including image compression and password generation run entirely inside your browser. Nothing is uploaded to any server."}},
     {"@type": "Question", "name": "Do the tools work on mobile?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, AhaTools is designed mobile-first and works on any device."}},
-    {"@type": "Question", "name": "Who built AhaTools?", "acceptedAnswer": {"@type": "Answer", "text": "AhaTools is created and maintained by the creator behind the AHA! YouTube channel."}},
-    {"@type": "Question", "name": "Are the calculations accurate?", "acceptedAnswer": {"@type": "Answer", "text": "Every tool uses standard public formulas and is covered by an automated test suite of 56 checks. Calculations run locally in your browser."}}
+    {"@type": "Question", "name": "Who built AhaTools?", "acceptedAnswer": {"@type": "Answer", "text": "AhaTools is created and maintained by the creator behind the AHA! YouTube channel."}}
   ]
 }
 </script>
-<style>
-  :root{
-    --bg:#f6f7fb; --card:#ffffff; --ink:#16181d; --muted:#6b7280;
-    --brand:#6c5ce7; --brand2:#00b894; --line:#e8eaf1; --radius:16px;
-    --shadow:0 6px 24px rgba(22,24,29,.07);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-  header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
-  .wrap{max-width:960px;margin:0 auto;padding:0 16px}
-  .bar{display:flex;align-items:center;justify-content:space-between;height:60px}
-  .logo{font-weight:800;font-size:20px;text-decoration:none;color:var(--ink)}
-  .logo span{color:var(--brand)}
-  main{padding:28px 0 64px}
-  .hero{text-align:center;margin-bottom:28px}
-  .hero h1{font-size:clamp(26px,5vw,40px);letter-spacing:-.5px}
-  .hero p{color:var(--muted);margin-top:8px;font-size:17px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
-  .tool-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:.15s;display:block}
-  .tool-card:hover{transform:translateY(-3px);border-color:var(--brand)}
-  .tool-card .ico{font-size:30px}
-  .tool-card h3{margin-top:10px;font-size:17px}
-  .tool-card p{color:var(--muted);font-size:13.5px;margin-top:4px}
-  .view{display:none}
-  .view.active{display:block}
-  .back{display:inline-block;margin-bottom:18px;background:none;border:none;color:var(--brand);font-size:15px;cursor:pointer;font-weight:600;padding:0}
-  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}
-  .panel h2{font-size:22px;margin-bottom:4px}
-  .panel .sub{color:var(--muted);font-size:14.5px;margin-bottom:20px}
-  label{display:block;font-size:13.5px;font-weight:600;margin:14px 0 6px;color:#374151}
-  input[type=text],input[type=number],input[type=date],input[type=password],select,textarea{
-    width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px;background:#fbfcfe;font-family:inherit}
-  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand)}
-  textarea{min-height:130px;resize:vertical}
-  .btn{display:inline-block;background:var(--brand);color:#fff;border:none;border-radius:10px;padding:12px 22px;font-size:15px;font-weight:700;cursor:pointer;margin-top:18px;width:100%}
-  .btn:hover{opacity:.92}
-  .btn-sm{width:auto;background:#fff;color:var(--brand);border:1.5px solid var(--brand);padding:8px 16px;font-size:14px;margin-top:12px}
-  .result{margin-top:18px;background:#f0fdf9;border:1px solid #b7f0dd;border-radius:12px;padding:16px;font-size:16px;display:none;word-break:break-word}
-  .result b{font-size:20px}
-  .stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-top:16px}
-  .stat{background:#fbfcfe;border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
-  .stat .n{font-size:22px;font-weight:800;color:var(--brand)}
-  .stat .t{font-size:12px;color:var(--muted);margin-top:2px}
-  .row{display:flex;gap:12px;flex-wrap:wrap}
-  .row>*{flex:1;min-width:140px}
-  .range{width:100%;accent-color:var(--brand)}
-  .chips{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
-  .chip{border:1px solid var(--line);background:#fbfcfe;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;cursor:pointer}
-  .chip:hover{border-color:var(--brand);color:var(--brand)}
-  .checks{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;font-size:14px;font-weight:500}
-  .checks label{margin:0;display:flex;align-items:center;gap:6px;font-weight:500;color:var(--ink)}
-  .pwbox{margin-top:16px;background:#16181d;color:#7ef0c2;border-radius:12px;padding:18px;font-family:Consolas,monospace;font-size:18px;word-break:break-all;text-align:center;letter-spacing:1px}
-  .faq{max-width:720px;margin:40px auto 0}
-  .faq h2{text-align:center;font-size:21px;margin-bottom:16px}
-  .qa{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin-bottom:10px;box-shadow:var(--shadow)}
-  .qa h3{font-size:15.5px}
-  .qa p{color:var(--muted);font-size:14px;margin-top:6px}
-  .info{margin-top:24px;border-top:1px solid var(--line);padding-top:6px;font-size:14.5px}
-  .info h3{font-size:15px;margin:18px 0 6px;color:var(--ink)}
-  .info p,.info li{color:#4b5563}
-  .info ol{padding-left:20px;margin-top:4px}
-  .info li{margin:3px 0}
-  .info .q{font-weight:700;margin-top:12px;color:var(--ink)}
-  .info a{color:var(--brand);text-decoration:none;font-weight:600}
-  .map{max-width:720px;margin:34px auto 0;text-align:center}
-  .map h2{font-size:18px;margin-bottom:12px}
-  .map a{display:inline-block;color:var(--muted);text-decoration:none;font-size:13.5px;margin:4px 8px}
-  .map a:hover{color:var(--brand)}
-  footer{border-top:1px solid var(--line);background:#fff;padding:22px 0;text-align:center;color:var(--muted);font-size:13.5px}
-</style>
 </head>
 <body>
-
 <header>
   <div class="wrap bar">
-    <a class="logo" href="#home">Aha<span>Tools</span> ⚡</a>
+    <a class="logo" href="">Aha<span>Tools</span> ⚡</a>
     <a class="logo" href="https://www.youtube.com/@Shahid-Ul-Islam-z5l" style="font-size:14px;color:var(--muted)">▶ YouTube</a>
   </div>
 </header>
-
 <main class="wrap">
 
-<section id="home" class="view active">
+<section class="view active">
   <div class="hero">
     <h1>Free Online Tools That Just Work</h1>
     <p>No signup. No uploads. Just answers — instantly.</p>
   </div>
   <div class="grid">
-    <a class="tool-card" href="#age-calculator"><div class="ico">🎂</div><h3>Age Calculator</h3><p>Exact age in years, months & days</p></a>
-    <a class="tool-card" href="#bmi-calculator"><div class="ico">⚖️</div><h3>BMI Calculator</h3><p>Check if your weight is healthy</p></a>
-    <a class="tool-card" href="#loan-calculator"><div class="ico">🏦</div><h3>Loan EMI Calculator</h3><p>What any loan really costs monthly</p></a>
-    <a class="tool-card" href="#discount-calculator"><div class="ico">🏷️</div><h3>Discount Calculator</h3><p>Real price after % off</p></a>
-    <a class="tool-card" href="#percentage-calculator"><div class="ico">％</div><h3>Percentage Calculator</h3><p>All 3 percentage problems solved</p></a>
-    <a class="tool-card" href="#gpa-calculator"><div class="ico">🎓</div><h3>GPA Calculator</h3><p>Your semester GPA in seconds</p></a>
-    <a class="tool-card" href="#word-counter"><div class="ico">📝</div><h3>Word Counter</h3><p>Words, characters & reading time</p></a>
-    <a class="tool-card" href="#case-converter"><div class="ico">🔤</div><h3>Case Converter</h3><p>UPPER, lower, Title Case & more</p></a>
-    <a class="tool-card" href="#image-compressor"><div class="ico">🖼️</div><h3>Image Compressor</h3><p>Shrink photos without uploading them</p></a>
-    <a class="tool-card" href="#password-generator"><div class="ico">🔐</div><h3>Password Generator</h3><p>Unhackable passwords, made locally</p></a>
-    <a class="tool-card" href="#days-between-dates"><div class="ico">📅</div><h3>Days Between Dates</h3><p>Countdown to any date</p></a>
-    <a class="tool-card" href="#unit-converter"><div class="ico">📏</div><h3>Unit Converter</h3><p>Length & weight conversions</p></a>
-    <a class="tool-card" href="#tip-calculator"><div class="ico">🍽️</div><h3>Tip Calculator</h3><p>Split bills fairly in seconds</p></a>
+    <a class="tool-card" href="age-calculator/"><div class="ico">🎂</div><h3>Age Calculator</h3><p>Exact age in years, months & days</p></a>
+    <a class="tool-card" href="bmi-calculator/"><div class="ico">⚖️</div><h3>BMI Calculator</h3><p>Check if your weight is healthy</p></a>
+    <a class="tool-card" href="loan-calculator/"><div class="ico">🏦</div><h3>Loan EMI Calculator</h3><p>What any loan really costs monthly</p></a>
+    <a class="tool-card" href="discount-calculator/"><div class="ico">🏷️</div><h3>Discount Calculator</h3><p>Real price after % off</p></a>
+    <a class="tool-card" href="percentage-calculator/"><div class="ico">％</div><h3>Percentage Calculator</h3><p>All 3 percentage problems solved</p></a>
+    <a class="tool-card" href="gpa-calculator/"><div class="ico">🎓</div><h3>GPA Calculator</h3><p>Your semester GPA in seconds</p></a>
+    <a class="tool-card" href="word-counter/"><div class="ico">📝</div><h3>Word Counter</h3><p>Words, characters & reading time</p></a>
+    <a class="tool-card" href="case-converter/"><div class="ico">🔤</div><h3>Case Converter</h3><p>UPPER, lower, Title Case & more</p></a>
+    <a class="tool-card" href="image-compressor/"><div class="ico">🖼️</div><h3>Image Compressor</h3><p>Shrink photos without uploading them</p></a>
+    <a class="tool-card" href="password-generator/"><div class="ico">🔐</div><h3>Password Generator</h3><p>Unhackable passwords, made locally</p></a>
+    <a class="tool-card" href="days-between-dates/"><div class="ico">📅</div><h3>Days Between Dates</h3><p>Countdown to any date</p></a>
+    <a class="tool-card" href="unit-converter/"><div class="ico">📏</div><h3>Unit Converter</h3><p>Length & weight conversions</p></a>
+    <a class="tool-card" href="tip-calculator/"><div class="ico">🍽️</div><h3>Tip Calculator</h3><p>Split bills fairly in seconds</p></a>
   </div>
 
   <div class="faq">
     <h2>Questions people ask 💬</h2>
     <div class="qa"><h3>Are these tools really free?</h3><p>Yes — every tool is 100% free, forever. No account, no watermark, no limits.</p></div>
-    <div class="qa"><h3>Is my data safe?</h3><p>Everything runs inside your own browser. Your photos and passwords never leave your device — there's no server involved.</p></div>
-    <div class="qa"><h3>Do they work on my phone?</h3><p>AhaTools is built mobile-first. It works smoothly on any phone, tablet or computer.</p></div>
-  </div>
 
   <div class="faq">
     <h2>About AhaTools — who's behind this?</h2>
@@ -167,606 +84,27 @@
     <div class="qa"><h3>🔄 How often is AhaTools updated?</h3><p>Regularly — new tools and fixes ship based on user feedback. Last updated: <strong>August 2026</strong>.</p></div>
   </div>
 
+  
+
   <nav class="map" aria-label="All tools">
     <h2>All 13 tools</h2>
-    <a href="#age-calculator">Age Calculator</a>
-    <a href="#bmi-calculator">BMI Calculator</a>
-    <a href="#loan-calculator">Loan EMI Calculator</a>
-    <a href="#discount-calculator">Discount Calculator</a>
-    <a href="#percentage-calculator">Percentage Calculator</a>
-    <a href="#gpa-calculator">GPA Calculator</a>
-    <a href="#word-counter">Word Counter</a>
-    <a href="#case-converter">Case Converter</a>
-    <a href="#image-compressor">Image Compressor</a>
-    <a href="#password-generator">Password Generator</a>
-    <a href="#days-between-dates">Days Between Dates</a>
-    <a href="#unit-converter">Unit Converter</a>
-    <a href="#tip-calculator">Tip Calculator</a>
+    <a href="age-calculator/">Age Calculator</a>
+    <a href="bmi-calculator/">BMI Calculator</a>
+    <a href="loan-calculator/">Loan EMI Calculator</a>
+    <a href="discount-calculator/">Discount Calculator</a>
+    <a href="percentage-calculator/">Percentage Calculator</a>
+    <a href="gpa-calculator/">GPA Calculator</a>
+    <a href="word-counter/">Word Counter</a>
+    <a href="case-converter/">Case Converter</a>
+    <a href="image-compressor/">Image Compressor</a>
+    <a href="password-generator/">Password Generator</a>
+    <a href="days-between-dates/">Days Between Dates</a>
+    <a href="unit-converter/">Unit Converter</a>
+    <a href="tip-calculator/">Tip Calculator</a>
   </nav>
 </section>
 
-<section id="age-calculator" class="view">
-  <button class="back" onclick="location.hash='home'">← All tools</button>
-  <div class="panel">
-    <h2>🎂 Age Calculator</h2>
-    <p class="sub">Enter your date of birth to get your exact age.</p>
-    <label>Date of birth</label>
-    <input type="date" id="dob">
-    <button class="btn" onclick="calcAge()">Calculate Age</button>
-    <div class="result" id="ageResult"></div>
-    <div class="info">
-      <h3>About this tool</h3>
-      <p>This age calculator works the same way official offices do — full calendar years first, then leftover months, then days. People use it for birthday planning, school/admission forms, visa and job applications where you must state age in exact years, months and days.</p>
-      <h3>How to use it</h3>
-      <ol>
-        <li>Pick your date of birth in the box above.</li>
-        <li>Press <strong>Calculate Age</strong> — no clicking through dropdowns needed.</li>
-        <li>Want total days lived instead? Use our <a href="#days-between-dates">Days Between Dates</a> tool with your birth date as the start.</li>
-      </ol>
-      <h3>FAQ</h3>
-      <p class="q">How is age calculated exactly?</p>
-      <p>It counts complete calendar years between your birth date and today, then remaining whole months, then remaining days — borrowing days from the previous month when needed (e.g. from Aug 30 to Aug 24 next year gives 11 months and 25 days).</p>
-      <p class="q">Why do some sites show a different age?</p>
-      <p>Sites that divide total days by 365.25 get slightly wrong month/day values. Calendar-accurate counting like this one matches what appears on official documents.</p>
-    </div>
-  </div>
-</section>
-
-<section id="bmi-calculator" class="view">
-  <button class="back" onclick="location.hash='home'">← All tools</button>
-  <div class="panel">
-    <h2>⚖️ BMI Calculator</h2>
-    <p class="sub">Body Mass Index using centimeters and kilograms.</p>
-    <div class="row">
-      <div><label>Height (cm)</label><input type="number" id="bmiH" placeholder="170"></div>
-      <div><label>Weight (kg)</label><input type="number" id="bmiW" placeholder="65"></div>
-    </div>
-    <button class="btn" onclick="calcBmi()">Calculate BMI</button>
-    <div class="result" id="bmiResult"></div>
-    <div class="info">
-      <h3>About this tool</h3>
-      <p>BMI (Body Mass Index) is the screening measure recommended by the World Health Organization to check whether your weight is in a healthy range for your height. It takes seconds, needs only a tape-measure-free height value in centimetres and weight in kilograms.</p>
-      <h3>How to use it</h3>
-      <ol>
-        <li>Enter height in cm (e.g. 170) and weight in kg (e.g. 65).</li>
-        <li>Your BMI shows instantly with its WHO category: under 18.5 underweight · 18.5–24.9 normal · 25–29.9 overweight · 30+ obese.</li>
-        <li>The result also shows the healthy weight range for your exact height.</li>
-      </ol>
-      <h3>FAQ</h3>
-      <p class="q">What is the BMI formula?</p>
-      <p>BMI = weight (kg) ÷ height² (m²). For example 65 kg at 1.70 m → 65 ÷ 2.89 = 22.5.</p>
-      <p class="q">Is BMI accurate for athletes?</p>
-      <p>Not perfectly — muscle weighs more than fat, so very muscular people can score "overweight" while being healthy. Treat BMI as a quick screening number, not a medical diagnosis; for body composition ask a professional.</p>
-    </div>
-  </div>
-</section>
-
-<section id="loan-calculator" class="view">
-  <button class="back" onclick="location.hash='home'">← All tools</button>
-  <div class="panel">
-    <h2>🏦 Loan EMI Calculator</h2>
-    <p class="sub">See your exact monthly payment before you borrow.</p>
-    <div class="row">
-      <div><label>Loan amount</label><input type="number" id="loanP" placeholder="500000"></div>
-      <div><label>Interest rate (% per year)</label><input type="number" id="loanR" step="0.1" placeholder="9"></div>
-      <div><label>Duration (years)</label><input type="number" id="loanY" placeholder="5"></div>
-    </div>
-    <button class="btn" onclick="calcEmi()">Calculate EMI</button>
-    <div class="result" id="emiResult"></div>
-    <div class="info">
-      <h3>About this tool</h3>
-      <p>EMI (Equated Monthly Instalment) is the fixed amount you pay a bank every month on a loan. This calculator shows that payment before you sign anything — plus the total interest you'll pay over the full duration, which banks don't highlight upfront.</p>
-      <h3>How to use it</h3>
-      <ol>
-        <li>Enter loan amount, annual interest rate and duration in years.</li>
-        <li>Check the monthly EMI — compare it against your monthly income (most advisors say keep it under 40%).</li>
-        <li>Look at <em>Total interest</em>: try shortening the duration and watch how much money it saves.</li>
-      </ol>
-      <h3>FAQ</h3>
-      <p class="q">What is the EMI formula?</p>
-      <p>EMI = P × r × (1+r)ⁿ ÷ ((1+r)ⁿ − 1), where P = principal, r = monthly rate (annual ÷ 12 ÷ 100), n = months. It's the standard reducing-balance formula used by banks worldwide.</p>
-      <p class="q">How can I pay less interest overall?</p>
-      <p>Two proven levers: shorter tenure (biggest saving) and prepayments early in the loan, when most of each EMI is still interest. Compare scenarios above before committing.</p>
-    </div>
-  </div>
-</section>
-
-<section id="discount-calculator" class="view">
-  <button class="back" onclick="location.hash='home'">← All tools</button>
-  <div class="panel">
-    <h2>🏷️ Discount Calculator</h2>
-    <p class="sub">Know the real price before you pay.</p>
-    <div class="row">
-      <div><label>Original price</label><input type="number" id="discPrice" placeholder="2000"></div>
-      <div><label>Discount (%)</label><input type="number" id="discPct" placeholder="25"></div>
-    </div>
-    <button class="btn" onclick="calcDisc()">Calculate Discount</button>
-    <div class="result" id="discResult"></div>
-    <div class="info">
-      <h3>About this tool</h3>
-      <p>Sale tags are designed to confuse. This discount calculator tells you the real final price and exact savings instantly — useful during sales seasons, market bargaining, or checking whether a "70% OFF!" deal is actually good.</p>
-      <h3>How to use it</h3>
-      <ol>
-        <li>Type the original price and the discount percentage.</li>
-        <li>Read what you'll actually pay at checkout.</li>
-        <li>Comparing two offers? Run both here instead of doing mental math.</li>
-      </ol>
-      <h3>FAQ</h3>
-      <p class="q">What's the formula?</p>
-      <p>Final price = price × (1 − discount ÷ 100). On 2,000 with 25% off: 2000 × 0.75 = 1,500 saved 500.</p>
-      <p class="q">Is 25% + 10% off equal to 35% off?</p>
-      <p>No — stores apply them one after another: 25% then 10% of the reduced price equals only 32.5% total. Chain them through this tool twice to see real stacked prices, and use our <a href="#percentage-calculator">Percentage Calculator</a> for other comparisons.</p>
-    </div>
-  </div>
-</section>
-
-<section id="percentage-calculator" class="view">
-  <button class="back" onclick="location.hash='home'">← All tools</button>
-  <div class="panel">
-    <h2>％ Percentage Calculator</h2>
-    <p class="sub">Three most-used percentage calculations.</p>
-    <label>What is <input type="number" id="p1a" style="width:90px;display:inline-block" value="10"> % of
-      <input type="number" id="p1b" style="width:110px;display:inline-block" value="200"> ?</label>
-    <div class="result" id="p1r"></div>
-    <label><input type="number" id="p2a" style="width:110px;display:inline-block" value="45"> is what percent of
-      <input type="number" id="p2b" style="width:110px;display:inline-block" value="200"> ?</label>
-    <div class="result" id="p2r"></div>
-    <label>Percent change from <input type="number" id="p3a" style="width:110px;display:inline-block" value="80"> to
-      <input type="number" id="p3b" style="width:110px;display:inline-block" value="100"></label>
-    <div class="result" id="p3r"></div>
-    <div class="info">
-      <h3>About this tool</h3>
-      <p>Percentages trip everyone up because there are three different everyday questions — "what's X% of Y", "X is what percent of Y" and "how much did it change". This page answers all three live as you type, no button needed.</p>
-      <h3>The three calculations</h3>
-      <ol>
-        <li><strong>X% of Y</strong> — tips, taxes, commissions. Example: 10% of 200 = 20.</li>
-        <li><strong>X is what % of Y</strong> — test scores, market share. Example: 45 of 200 = 22.5%.</li>
-        <li><strong>% change</strong> — price rises, growth reports. Example: 80 → 100 = +25% increase.</li>
-      </ol>
-      <h3>FAQ</h3>
-      <p class="q">What is the percentage change formula?</p>
-      <p>((new − old) ÷ |old|) × 100. Going from 80 to 100 is (20 ÷ 80) × 100 = 25% up; the reverse is −20%, because percentages aren't symmetric.</p>
-      <p class="q">Where does this help daily?</p>
-      <p>Restaurant bills, exam marks, salary hike offers, discount stacking (see our <a href="#discount-calculator">Discount Calculator</a>) and loan interest comparisons.</p>
-    </div>
-  </div>
-</section>
-
-<section id="gpa-calculator" class="view">
-  <button class="back" onclick="location.hash='home'">← All tools</button>
-  <div class="panel">
-    <h2>🎓 GPA Calculator</h2>
-    <p class="sub">Pick a grade and credits for each course.</p>
-    <div id="gpaRows">
-      <div class="row gpaRow" style="margin-top:10px">
-        <select class="gpaGrade"><option value="4">A (4.00)</option><option value="3.7">A- (3.70)</option><option value="3.3">B+ (3.30)</option><option value="3" selected>B (3.00)</option><option value="2.3">C+ (2.30)</option><option value="2">C (2.00)</option><option value="1">D (1.00)</option><option value="0">F (0.00)</option></select>
-        <input type="number" class="gpaCredit" placeholder="Credits (e.g. 3)" min="0" step="0.5" value="3">
-      </div>
-      <div class="row gpaRow" style="margin-top:10px">
-        <select class="gpaGrade"><option value="4">A (4.00)</option><option value="3.7">A- (3.70)</option><option value="3.3">B+ (3.30)</option><option value="3" selected>B (3.00)</option><option value="2.3">C+ (2.30)</option><option value="2">C (2.00)</option><option value="1">D (1.00)</option><option value="0">F (0.00)</option></select>
-        <input type="number" class="gpaCredit" placeholder="Credits (e.g. 3)" min="0" step="0.5" value="3">
-      </div>
-      <div class="row gpaRow" style="margin-top:10px">
-        <select class="gpaGrade"><option value="4">A (4.00)</option><option value="3.7">A- (3.70)</option><option value="3.3">B+ (3.30)</option><option value="3" selected>B (3.00)</option><option value="2.3">C+ (2.30)</option><option value="2">C (2.00)</option><option value="1">D (1.00)</option><option value="0">F (0.00)</option></select>
-        <input type="number" class="gpaCredit" placeholder="Credits (e.g. 3)" min="0" step="0.5" value="3">
-      </div>
-    </div>
-    <button class="btn btn-sm" onclick="addGpaRow()">+ Add another course</button>
-    <button class="btn" onclick="calcGpa()">Calculate GPA</button>
-    <div class="result" id="gpaResult"></div>
-    <div class="info">
-      <h3>About this tool</h3>
-      <p>This GPA calculator computes your credit-weighted grade point average on the standard 4.00 scale used by most universities in the US, Bangladesh, Pakistan and beyond. Credits matter: an A in a 4-credit course moves your GPA more than an A in a 1-credit lab.</p>
-      <h3>How to use it</h3>
-      <ol>
-        <li>Pick a letter grade and credit hours for each course.</li>
-        <li>Add more rows for extra courses with one click.</li>
-        <li>Your GPA appears instantly weighted by credits.</li>
-      </ol>
-      <h3>FAQ</h3>
-      <p class="q">What's the formula?</p>
-      <p>GPA = Σ(grade points × credits) ÷ Σ(credits). Grade points: A=4.00, A−=3.70, B+=3.30, B=3.00, C+=2.30, C=2.00, D=1.00, F=0.</p>
-      <p class="q">Is GPA the same as CGPA?</p>
-      <p>GPA covers one semester; CGPA averages all semesters so far. Calculate each semester here, then average them credit-weighted for CGPA. Some universities use different scales — check yours before applying scholarships.</p>
-    </div>
-  </div>
-</section>
-
-<section id="word-counter" class="view">
-  <button class="back" onclick="location.hash='home'">← All tools</button>
-  <div class="panel">
-    <h2>📝 Word Counter</h2>
-    <p class="sub">Type or paste text — stats update live.</p>
-    <textarea id="wcInput" placeholder="Paste your text here..." oninput="countWords()"></textarea>
-    <div class="stats">
-      <div class="stat"><div class="n" id="stWords">0</div><div class="t">Words</div></div>
-      <div class="stat"><div class="n" id="stChars">0</div><div class="t">Characters</div></div>
-      <div class="stat"><div class="n" id="stSent">0</div><div class="t">Sentences</div></div>
-      <div class="stat"><div class="n" id="stRead">0 min</div><div class="t">Reading time</div></div>
-    </div>
-    <div class="info">
-      <h3>About this tool</h3>
-      <p>Students checking essay limits, writers meeting deadlines, and anyone posting where characters are capped — this counter shows words, characters, sentences and estimated reading time live as you type or paste. Your text stays on your device; nothing is uploaded.</p>
-      <h3>How to use it</h3>
-      <ol>
-        <li>Paste or type into the box — stats update instantly.</li>
-        <li>Characters count includes spaces (what most forms and social platforms measure).</li>
-        <li>Reading time assumes an average adult pace of ~200 words per minute.</li>
-      </ol>
-      <h3>FAQ</h3>
-      <p class="q">Do characters include spaces?</p>
-      <p>Yes — the character figure counts every letter, space and punctuation mark, which is what Twitter/X, SMS gates and meta-description limits actually enforce.</p>
-      <p class="q">How accurate is reading time?</p>
-      <p>It's a solid estimate for general audiences at 200 wpm. Technical content runs slower (~150 wpm), casual posts faster. Writing something long? Track sentence variety too — short sentences read faster than the math suggests.</p>
-    </div>
-  </div>
-</section>
-
-<section id="case-converter" class="view">
-  <button class="back" onclick="location.hash='home'">← All tools</button>
-  <div class="panel">
-    <h2>🔤 Case Converter</h2>
-    <p class="sub">Fix text capitalization in one click.</p>
-    <textarea id="caseInput" placeholder="Paste your text here..."></textarea>
-    <div class="chips">
-      <button class="chip" onclick="convertCase('upper')">UPPERCASE</button>
-      <button class="chip" onclick="convertCase('lower')">lowercase</button>
-      <button class="chip" onclick="convertCase('title')">Title Case</button>
-      <button class="chip" onclick="convertCase('sentence')">Sentence case</button>
-    </div>
-    <button class="btn btn-sm" id="caseCopy" onclick="copyCase()">📋 Copy result</button>
-    <div class="info">
-      <h3>About this tool</h3>
-      <p>Fixing ALL-CAPS text someone sent you, formatting headlines, or cleaning up data entries — this converter switches between UPPERCASE, lowercase, Title Case and Sentence Case in one click, then copies the fixed version straight to your clipboard.</p>
-      <h3>The four modes</h3>
-      <ol>
-        <li><strong>UPPERCASE / lowercase</strong> — for codes, headings, or calming down shouty emails.</li>
-        <li><strong>Title Case</strong> — capitalizes Each Word, ideal for video titles and product names.</li>
-        <li><strong>Sentence case</strong> — capitalizes the first letter of each sentence only; best for body paragraphs.</li>
-      </ol>
-      <h3>FAQ</h3>
-      <p class="q">When should I use Title Case vs Sentence case?</p>
-      <p>Title Case for titles, headlines and YouTube video names; Sentence case for descriptions and paragraphs — it's easier to read in long form.</p>
-      <p class="q">Does it work with any language?</p>
-      <p>Fully for English text. For mixed Bengali/English content the English parts convert correctly while other scripts pass through unchanged.</p>
-    </div>
-  </div>
-</section>
-
-<section id="image-compressor" class="view">
-  <button class="back" onclick="location.hash='home'">← All tools</button>
-  <div class="panel">
-    <h2>🖼️ Image Compressor</h2>
-    <p class="sub">Your photo never leaves your device — everything happens in your browser.</p>
-    <label>Choose image</label>
-    <input type="file" id="imgFile" accept="image/*">
-    <label>Quality: <span id="qVal">70</span>%</label>
-    <input type="range" class="range" id="imgQ" min="10" max="95" value="70" oninput="document.getElementById('qVal').textContent=this.value">
-    <button class="btn" onclick="compressImg()">Compress & Download</button>
-    <div class="result" id="imgResult"></div>
-    <div class="info">
-      <h3>About this tool</h3>
-      <p>Photos from phones are often 3–8 MB — too big for forms, email limits and slow websites. This compressor shrinks them to a fraction of the size, and because everything happens on your device via HTML Canvas, your pictures are never uploaded anywhere.</p>
-      <h3>How to use it</h3>
-      <ol>
-        <li>Choose an image (JPG or PNG).</li>
-        <li>Pick quality: 60–75% is the sweet spot — visually identical for photos at half the size.</li>
-        <li>Compress & Download — very large images are also resized down to max 1600px, perfect for web use.</li>
-      </ol>
-      <h3>FAQ</h3>
-      <p class="q">Which quality should I choose?</p>
-      <p>70% suits most photos. Go 85–95% for prints or text-heavy images; below 50% you'll start seeing blur around sharp edges.</p>
-      <p class="q">Why did my PNG get bigger/smaller than expected?</p>
-      <p>Output is JPEG, which compresses photographs extremely well but flattens transparency. For logos with transparent backgrounds, keep the original PNG instead.</p>
-    </div>
-  </div>
-</section>
-
-<section id="password-generator" class="view">
-  <button class="back" onclick="location.hash='home'">← All tools</button>
-  <div class="panel">
-    <h2>🔐 Password Generator</h2>
-    <p class="sub">Generated with cryptographic randomness, on your device only.</p>
-    <label>Length: <span id="pwLenVal">16</span> characters</label>
-    <input type="range" class="range" id="pwLen" min="8" max="40" value="16" oninput="document.getElementById('pwLenVal').textContent=this.value">
-    <div class="checks">
-      <label><input type="checkbox" id="pwUpp" checked> ABC</label>
-      <label><input type="checkbox" id="pwNum" checked> 123</label>
-      <label><input type="checkbox" id="pwSym" checked> #$%</label>
-    </div>
-    <div class="pwbox" id="pwOut">Click generate ↓</div>
-    <button class="btn btn-sm" onclick="genPass()">🎲 Generate</button>
-    <button class="btn btn-sm" onclick="copyPw()">📋 Copy</button>
-    <div class="info">
-      <h3>About this tool</h3>
-      <p>Weak passwords are behind most account takeovers. This generator uses your browser's cryptographic random number generator (Web Crypto API) — the same standard used by security software — and creates passwords that never leave your device because there's no server to send them to.</p>
-      <h3>How to make a strong password here</h3>
-      <ol>
-        <li>Keep length at 16+ characters — length beats complexity every time.</li>
-        <li>Leave all character sets checked for maximum strength.</li>
-        <li>Generate → Copy → paste into the site's password field. Save it in a password manager.</li>
-      </ol>
-      <h3>FAQ</h3>
-      <p class="q">Is this password stored anywhere?</p>
-      <p>No. It exists only in your browser tab's memory until you close it. There's no logging, no server, no database — verify by going offline: it still works identically.</p>
-      <p class="q">Can hackers guess crypto-random passwords?</p>
-      <p>Not practically. A 16-character random password has ~10²⁵ combinations; at a trillion guesses per second that's over 80 million years of average search time.</p>
-    </div>
-  </div>
-</section>
-
-<section id="days-between-dates" class="view">
-  <button class="back" onclick="location.hash='home'">← All tools</button>
-  <div class="panel">
-    <h2>📅 Days Between Dates</h2>
-    <p class="sub">Countdown to an exam, wedding, deadline — anything.</p>
-    <div class="row">
-      <div><label>From date</label><input type="date" id="dFrom"></div>
-      <div><label>To date</label><input type="date" id="dTo"></div>
-    </div>
-    <button class="btn" onclick="diffDates()">Calculate Difference</button>
-    <div class="result" id="diffResult"></div>
-    <div class="info">
-      <h3>About this tool</h3>
-      <p>A precise days-between-dates counter for exam countdowns, project deadlines, visa stays, pregnancy weeks or "how long have we been together" — handling leap years and different month lengths correctly, which mental math always gets wrong.</p>
-      <h3>How to use it</h3>
-      <ol>
-        <li>Pick the two dates — order doesn't matter, negatives are impossible.</li>
-        <li>You get total days plus a years/months/days breakdown and week count.</li>
-        <li>Counting age in total days? Use your birth date as the start.</li>
-      </ol>
-      <h3>FAQ</h3>
-      <p class="q">Are leap years counted?</p>
-      <p>Yes — real calendar arithmetic, so Feb 29, century rules and 31-day months are all handled exactly. Example: Feb 28 → Mar 1, 2024 correctly equals 2 days.</p>
-      <p class="q">Does it count business days?</p>
-      <p>Total days only for now. Quick manual rule: divide by 7 and subtract ~4.3 weekends per month for rough working-day estimates.</p>
-    </div>
-  </div>
-</section>
-
-<section id="unit-converter" class="view">
-  <button class="back" onclick="location.hash='home'">← All tools</button>
-  <div class="panel">
-    <h2>📏 Unit Converter</h2>
-    <p class="sub">Convert length and weight instantly.</p>
-    <label>Type</label>
-    <select id="ucType" onchange="fillUnits()">
-      <option value="length">Length</option>
-      <option value="weight">Weight</option>
-    </select>
-    <div class="row">
-      <div><label>From</label><select id="ucFrom"></select></div>
-      <div><label>To</label><select id="ucTo"></select></div>
-    </div>
-    <label>Value</label>
-    <input type="number" id="ucVal" placeholder="1">
-    <button class="btn" onclick="convertUnits()">Convert</button>
-    <div class="result" id="ucResult"></div>
-    <div class="info">
-      <h3>About this tool</h3>
-      <p>Converts length (m, km, cm, mm, mile, foot, inch, yard) and weight (kg, g, lb, oz, tonne) using internationally exact factors — not rounded approximations — so results match engineering and shipping requirements.</p>
-      <h3>How to use it</h3>
-      <ol>
-        <li>Pick Length or Weight.</li>
-        <li>Choose the from/to units and enter a value.</li>
-        <li>Result appears with up to 6 decimal places of precision.</li>
-      </ol>
-      <h3>FAQ</h3>
-      <p class="q">What conversion factors are used?</p>
-      <p>The exact international ones: 1 inch = 0.0254 m, 1 mile = 1609.344 m, 1 lb = 0.45359237 kg, 1 oz = 0.028349523 kg — same values defined by NIST standards.</p>
-      <p class="q">Why do other sites show slightly different numbers?</p>
-      <p>They round the factors first (like 1 lb ≈ 0.454), which introduces error that grows with big values. This tool converts from exact base units instead.</p>
-    </div>
-  </div>
-</section>
-
-<section id="tip-calculator" class="view">
-  <button class="back" onclick="location.hash='home'">← All tools</button>
-  <div class="panel">
-    <h2>🍽️ Tip Calculator</h2>
-    <p class="sub">Bill splitting with tip, done in seconds.</p>
-    <div class="row">
-      <div><label>Bill amount</label><input type="number" id="tipBill" placeholder="1500"></div>
-      <div><label>People</label><input type="number" id="tipPeople" value="2" min="1"></div>
-    </div>
-    <label>Tip: <span id="tipVal">10</span>%</label>
-    <input type="range" class="range" id="tipPct" min="0" max="30" value="10" oninput="document.getElementById('tipVal').textContent=this.value">
-    <div class="chips">
-      <button class="chip" onclick="setTip(5)">5%</button>
-      <button class="chip" onclick="setTip(10)">10%</button>
-      <button class="chip" onclick="setTip(15)">15%</button>
-      <button class="chip" onclick="setTip(20)">20%</button>
-    </div>
-    <button class="btn" onclick="calcTip()">Calculate</button>
-    <div class="result" id="tipResult"></div>
-    <div class="info">
-      <h3>About this tool</h3>
-      <p>Dinner with friends shouldn't end with five people doing mental math over one receipt. Enter the bill, choose tip %, set how many are splitting — everyone sees their exact share including tip in one number.</p>
-      <h3>How to use it</h3>
-      <ol>
-        <li>Enter total bill amount and number of people.</li>
-        <li>Slide the tip (or tap 5/10/15/20% quick chips).</li>
-        <li>Per-person amount shows instantly — no rounding arguments left.</li>
-      </ol>
-      <h3>FAQ</h3>
-      <p class="q">How much should I tip?</p>
-      <p>It's cultural: 15–20% is standard at US restaurants; in many countries including Bangladesh service is included and tipping is optional appreciation for good service. The slider covers whatever your situation calls for.</p>
-      <p class="q">Should the tip be split equally?</p>
-      <p>Equal splitting per person is the default here because it's how groups usually settle. If one person ordered significantly more, calculate their share separately with our <a href="#percentage-calculator">Percentage Calculator</a>.</p>
-    </div>
-  </div>
-</section>
-
 </main>
-
 <footer>Built with ⚡ by AHA! · <a href="https://www.youtube.com/@Shahid-Ul-Islam-z5l" style="color:var(--brand)">Watch tutorials on YouTube</a></footer>
-
-<script>
-if(location.protocol.indexOf('http')===0){
-  const u=location.origin+'/';
-  const c=document.querySelector('link[rel=canonical]');if(c)c.href=u;
-  const o=document.querySelector('meta[property="og:url"]');if(o)o.content=u;
-}
-const UNITS={
-  length:{m:1,km:1000,cm:.01,mm:.001,mile:1609.344,foot:.3048,inch:.0254,yard:.9144},
-  weight:{kg:1,g:.001,lb:.45359237,oz:.028349523,t:1000}
-};
-function fillUnits(){
-  const t=document.getElementById('ucType').value,u=Object.keys(UNITS[t]),f=document.getElementById('ucFrom'),to=document.getElementById('ucTo');
-  f.innerHTML=u.map(x=>`<option>${x}</option>`).join('');
-  to.innerHTML=u.map((x,i)=>`<option ${i===1?'selected':''}>${x}</option>`).join('');
-  document.getElementById('ucResult').style.display='none';
-}
-function convertUnits(){
-  const t=UNITS[document.getElementById('ucType').value],v=parseFloat(document.getElementById('ucVal').value);
-  const f=document.getElementById('ucFrom').value,to=document.getElementById('ucTo').value,r=document.getElementById('ucResult');
-  if(isNaN(v)){r.style.display='none';return}
-  r.innerHTML=`<b>${v} ${f}</b> = <b>${(v*t[f]/t[to]).toLocaleString(undefined,{maximumFractionDigits:6})} ${to}</b>`;
-  r.style.display='block';
-}
-function calcAge(){
-  const d=new Date(document.getElementById('dob').value),r=document.getElementById('ageResult');
-  if(!d.getTime()){r.style.display='none';return}
-  if(d>new Date()){r.innerHTML='🚼 That date is in the future!';r.style.display='block';return}
-  const n=new Date();let y=n.getFullYear()-d.getFullYear(),m=n.getMonth()-d.getMonth(),day=n.getDate()-d.getDate();
-  if(day<0){m--;day+=new Date(n.getFullYear(),n.getMonth(),0).getDate()}
-  if(m<0){y--;m+=12}
-  r.innerHTML=`You are <b>${y}</b> years, <b>${m}</b> months and <b>${day}</b> days old 🎉<br><small>That's about ${(Math.floor((n-d)/31557600000*10)/10)} years total.</small>`;
-  r.style.display='block';
-}
-function calcBmi(){
-  const h=parseFloat(document.getElementById('bmiH').value)/100,w=parseFloat(document.getElementById('bmiW').value),r=document.getElementById('bmiResult');
-  if(!h||!w||h<=0||w<=0){alert('Enter valid height and weight');return}
-  const bmi=w/(h*h);
-  let c=bmi<18.5?'Underweight':bmi<25?'Normal ✅':bmi<30?'Overweight':'Obese';
-  r.innerHTML=`Your BMI is <b>${bmi.toFixed(1)}</b> — <b>${c}</b><br><small>Healthy range for your height: ${(18.5*h*h).toFixed(1)}–${(24.9*h*h).toFixed(1)} kg</small>`;
-  r.style.display='block';
-}
-function calcEmi(){
-  const P=parseFloat(document.getElementById('loanP').value),R=parseFloat(document.getElementById('loanR').value)/1200,Y=parseFloat(document.getElementById('loanY').value),r=document.getElementById('emiResult');
-  if(isNaN(P)||isNaN(R)||isNaN(Y)||P<=0||Y<=0){alert('Fill all fields');return}
-  const n=Y*12;
-  const emi=R>0?P*R*Math.pow(1+R,n)/(Math.pow(1+R,n)-1):P/n;
-  const total=emi*n;
-  r.innerHTML=`Monthly payment: <b>${emi.toLocaleString(undefined,{maximumFractionDigits:0})}</b><br><small>Total repayment: <b>${total.toLocaleString(undefined,{maximumFractionDigits:0})}</b> · Total interest: <b>${(total-P).toLocaleString(undefined,{maximumFractionDigits:0})}</b> over ${n} months</small>`;
-  r.style.display='block';
-}
-function calcDisc(){
-  const p=parseFloat(document.getElementById('discPrice').value),d=parseFloat(document.getElementById('discPct').value),r=document.getElementById('discResult');
-  if(isNaN(p)||isNaN(d)||p<=0||d<0||d>100){alert('Enter a valid price and discount between 0 and 100');return}
-  const save=p*d/100;
-  r.innerHTML=`You pay: <b>${(p-save).toLocaleString(undefined,{maximumFractionDigits:2})}</b><br><small>You save <b>${save.toLocaleString(undefined,{maximumFractionDigits:2})}</b> (${d}% off)</small>`;
-  r.style.display='block';
-}
-function pct(){
-  const g=id=>parseFloat(document.getElementById(id).value);
-  const s=(id,v)=>{const e=document.getElementById(id);e.innerHTML=v;e.style.display='block'};
-  let a=g('p1a'),b=g('p1b');if(!isNaN(a)&&!isNaN(b))s('p1r',`Answer: <b>${(a*b/100).toLocaleString()}</b>`);
-  a=g('p2a');b=g('p2b');if(!isNaN(a)&&!isNaN(b)&&b!==0)s('p2r',`Answer: <b>${(a/b*100).toFixed(2)}%</b>`);
-  a=g('p3a');b=g('p3b');if(!isNaN(a)&&!isNaN(b)&&a!==0)s('p3r',`Change: <b>${(((b-a)/Math.abs(a))*100).toFixed(2)}%</b> ${b>=a?'📈 increase':'📉 decrease'}`);
-}
-['p1a','p1b','p2a','p2b','p3a','p3b'].forEach(id=>document.getElementById(id).addEventListener('input',pct));
-function addGpaRow(){
-  const c=document.querySelector('.gpaRow').cloneNode(true);
-  document.getElementById('gpaRows').appendChild(c);
-}
-function calcGpa(){
-  let pts=0,cr=0;
-  document.querySelectorAll('.gpaRow').forEach(row=>{
-    const g=parseFloat(row.querySelector('.gpaGrade').value);
-    const c=parseFloat(row.querySelector('.gpaCredit').value);
-    if(!isNaN(g)&&c>0){pts+=g*c;cr+=c}
-  });
-  const r=document.getElementById('gpaResult');
-  if(cr===0){alert('Add at least one course with credits');return}
-  r.innerHTML=`Your GPA is <b>${(pts/cr).toFixed(2)}</b><br><small>Calculated from ${cr} total credits</small>`;
-  r.style.display='block';
-}
-function countWords(){
-  const t=document.getElementById('wcInput').value;
-  document.getElementById('stWords').textContent=t.trim()?t.trim().split(/\s+/).length:0;
-  document.getElementById('stChars').textContent=t.length;
-  document.getElementById('stSent').textContent=(t.match(/[.!?]+/g)||[]).length;
-  document.getElementById('stRead').textContent=Math.max(t.trim()?1:0,Math.ceil(t.split(/\s+/).filter(Boolean).length/200))+' min';
-}
-function convertCase(mode){
-  const el=document.getElementById('caseInput'),t=el.value;
-  if(mode==='upper')el.value=t.toUpperCase();
-  else if(mode==='lower')el.value=t.toLowerCase();
-  else if(mode==='title')el.value=t.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
-  else el.value=t.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g,c=>c.toUpperCase());
-}
-function copyCase(){
-  const b=document.getElementById('caseCopy');
-  navigator.clipboard.writeText(document.getElementById('caseInput').value).then(()=>{b.textContent='✅ Copied!';setTimeout(()=>b.textContent='📋 Copy result',1500)});
-}
-function compressImg(){
-  const f=document.getElementById('imgFile').files[0],q=document.getElementById('imgQ').value/100,r=document.getElementById('imgResult');
-  if(!f){alert('Choose an image first');return}
-  const img=new Image(),url=URL.createObjectURL(f);
-  img.onload=()=>{
-    const c=document.createElement('canvas'),max=1600;
-    let w=img.width,h=img.height;
-    if(w>max||h>max){const k=Math.min(max/w,max/h);w*=k;h*=k}
-    c.width=w;c.height=h;
-    c.getContext('2d').drawImage(img,0,0,w,h);
-    c.toBlob(b=>{
-      const a=document.createElement('a');
-      a.href=URL.createObjectURL(b);a.download=f.name.replace(/\.\w+$/,'')+'-compressed.jpg';a.click();
-      r.innerHTML=`Done ✅ <b>${(f.size/1024).toFixed(0)} KB</b> → <b>${(b.size/1024).toFixed(0)} KB</b> (${Math.round((1-b.size/f.size)*100)}% smaller)`;
-      r.style.display='block';
-      URL.revokeObjectURL(url);
-    },'image/jpeg',q);
-  };
-  img.src=url;
-}
-function genPass(){
-  const len=+document.getElementById('pwLen').value;
-  let chars='abcdefghijklmnopqrstuvwxyz';
-  if(document.getElementById('pwUpp').checked)chars+='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  if(document.getElementById('pwNum').checked)chars+='0123456789';
-  if(document.getElementById('pwSym').checked)chars+='!@#$%^&*()-_=+[]{};:,.?';
-  const arr=new Uint32Array(len);
-  crypto.getRandomValues(arr);
-  document.getElementById('pwOut').textContent=[...arr].map(x=>chars[x%chars.length]).join('');
-}
-function copyPw(){
-  const t=document.getElementById('pwOut').textContent;
-  if(t==='Click generate ↓')return;
-  navigator.clipboard.writeText(t).then(()=>{document.getElementById('pwOut').textContent='Copied ✅';setTimeout(genPass,800)});
-}
-function diffDates(){
-  const a=new Date(document.getElementById('dFrom').value),b=new Date(document.getElementById('dTo').value),r=document.getElementById('diffResult');
-  if(!a.getTime()||!b.getTime()){alert('Pick both dates');return}
-  const [s,e]=a<=b?[a,b]:[b,a];
-  const days=Math.round((e-s)/86400000);
-  let y=e.getFullYear()-s.getFullYear(),m=e.getMonth()-s.getMonth(),d=e.getDate()-s.getDate();
-  if(d<0){m--;d+=new Date(e.getFullYear(),e.getMonth(),0).getDate()}
-  if(m<0){y--;m+=12}
-  r.innerHTML=`<b>${days.toLocaleString()}</b> days total<br><small>= ${y} year(s), ${m} month(s), ${d} day(s) · about ${(days/7).toFixed(1)} weeks</small>`;
-  r.style.display='block';
-}
-function setTip(v){
-  document.getElementById('tipPct').value=v;
-  document.getElementById('tipVal').textContent=v;
-}
-function calcTip(){
-  const bill=parseFloat(document.getElementById('tipBill').value),ppl=Math.max(1,parseInt(document.getElementById('tipPeople').value)||1),t=+document.getElementById('tipPct').value,r=document.getElementById('tipResult');
-  if(isNaN(bill)||bill<=0){alert('Enter a valid bill amount');return}
-  const tip=bill*t/100,total=bill+tip;
-  r.innerHTML=`Per person: <b>${(total/ppl).toLocaleString(undefined,{maximumFractionDigits:2})}</b><br><small>Tip: ${tip.toLocaleString(undefined,{maximumFractionDigits:2})} · Total: ${total.toLocaleString(undefined,{maximumFractionDigits:2})} · Split between ${ppl}</small>`;
-  r.style.display='block';
-}
-function route(){
-  const id=location.hash.slice(1)||'home';
-  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
-  const el=document.getElementById(id);
-  (el||document.getElementById('home')).classList.add('active');
-  window.scrollTo(0,0);
-  fillUnits();
-}
-window.addEventListener('hashchange',route);
-route();
-</script>
 </body>
 </html>

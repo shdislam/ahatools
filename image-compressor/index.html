@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Compressor – Shrink JPG/PNG Online, 100% Private</title>
+<meta name="description" content="Compress JPG and PNG images in your browser. Photos never upload to any server. Choose quality, download smaller images instantly.">
+<meta name="author" content="AHA!">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#6c5ce7">
+<link rel="canonical" href="https://ahatools.pages.dev/image-compressor/">
+<meta property="og:title" content="Image Compressor — Free Online Tool">
+<meta property="og:description" content="Compress JPG and PNG images in your browser. Photos never upload to any server. Choose quality, download smaller images instantly.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ahatools.pages.dev/image-compressor/">
+<meta property="og:site_name" content="AhaTools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Image Compressor">
+<meta name="twitter:description" content="Compress JPG and PNG images in your browser. Photos never upload to any server. Choose quality, download smaller images instantly.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="stylesheet" href="../assets/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Image Compressor","url":"https://ahatools.pages.dev/image-compressor/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Compress JPG and PNG images in your browser. Photos never upload to any server. Choose quality, download smaller images instantly."}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="../">Aha<span>Tools</span> ⚡</a>
+    <a class="logo" href="https://www.youtube.com/@Shahid-Ul-Islam-z5l" style="font-size:14px;color:var(--muted)">▶ YouTube</a>
+  </div>
+</header>
+<main class="wrap">
+<div class="panel"><a class="back" href="../">← All tools</a>
+  <div class="panel">
+    <h1>🖼️ Image Compressor</h1>
+    <p class="sub">Your photo never leaves your device — everything happens in your browser.</p>
+    <label>Choose image</label>
+    <input type="file" id="imgFile" accept="image/*">
+    <label>Quality: <span id="qVal">70</span>%</label>
+    <input type="range" class="range" id="imgQ" min="10" max="95" value="70" oninput="document.getElementById('qVal').textContent=this.value">
+    <button class="btn" onclick="compressImg()">Compress & Download</button>
+    <div class="result" id="imgResult"></div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>Photos from phones are often 3–8 MB — too big for forms, email limits and slow websites. This compressor shrinks them to a fraction of the size, and because everything happens on your device via HTML Canvas, your pictures are never uploaded anywhere.</p>
+      <h3>How to use it</h3>
+      <ol>
+        <li>Choose an image (JPG or PNG).</li>
+        <li>Pick quality: 60–75% is the sweet spot — visually identical for photos at half the size.</li>
+        <li>Compress & Download — very large images are also resized down to max 1600px, perfect for web use.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">Which quality should I choose?</p>
+      <p>70% suits most photos. Go 85–95% for prints or text-heavy images; below 50% you'll start seeing blur around sharp edges.</p>
+      <p class="q">Why did my PNG get bigger/smaller than expected?</p>
+      <p>Output is JPEG, which compresses photographs extremely well but flattens transparency. For logos with transparent backgrounds, keep the original PNG instead.</p>
+    </div>
+  </div></div>
+<nav class="map" aria-label="More tools"><h2>More free tools</h2><a href="../age-calculator/">🎂 Age Calculator</a>
+<a href="../bmi-calculator/">⚖️ BMI Calculator</a>
+<a href="../loan-calculator/">🏦 Loan EMI Calculator</a>
+<a href="../discount-calculator/">🏷️ Discount Calculator</a>
+<a href="../percentage-calculator/">％ Percentage Calculator</a>
+<a href="../gpa-calculator/">🎓 GPA Calculator</a><a href="../">View all 13 →</a></nav>
+</main>
+<footer>Built with ⚡ by AHA! · <a href="https://www.youtube.com/@Shahid-Ul-Islam-z5l" style="color:var(--brand)">Watch tutorials on YouTube</a></footer>
+<script src="../assets/app.js"></script>
+<script>if(typeof fillUnits==='function'&&document.getElementById('ucType'))fillUnits();</script>
+</body>
+</html>

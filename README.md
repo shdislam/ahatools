@@ -14,11 +14,21 @@
 | 🍽️ Tip Calculator | | |
 
 ## Highlights
+- **Real subpages** — each tool is its own crawlable URL (`/bmi-calculator/`) with unique title, meta description and canonical
 - **100% client-side** — images and passwords never leave the user's device
-- **Zero dependencies** — one HTML file (~30 KB), instant load on slow connections
-- **SEO-ready** — Open Graph, JSON-LD structured data (WebApplication + FAQPage), sitemap.xml, robots.txt
-- **Hash-based routing** — every tool has its own shareable URL (`/#gpa-calculator`)
+- **Zero dependencies** — shared CSS/JS assets, instant load on slow connections
+- **SEO-ready** — Open Graph, JSON-LD structured data, sitemap.xml, robots.txt, internal cross-linking
 - **Mobile-first** — designed for phones on slow networks
+
+## Structure
+```
+index.html            homepage (index of all tools)
+<tool-slug>/index.html  one page per tool (13×)
+assets/style.css      shared styles
+assets/app.js         shared tool logic
+generate-pages.mjs    regenerates all pages from metadata
+update-sitemap.mjs    refreshes sitemap dates / sets domain
+```
 
 ## SEO Automation
 Run after adding/changing tools:

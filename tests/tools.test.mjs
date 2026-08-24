@@ -7,7 +7,7 @@ import { webcrypto } from 'crypto';
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(dir, '..');
-const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const DOMAIN = 'https://ahatools.pages.dev';
 
 let pass = 0, fail = 0;
 const results = [];
@@ -51,9 +51,6 @@ class El {
 
 const reg = {};
 const el = id => (reg[id] ??= new El('div'));
-const VIEW_IDS = ['home','age-calculator','bmi-calculator','loan-calculator','discount-calculator','percentage-calculator','gpa-calculator','word-counter','case-converter','image-compressor','password-generator','days-between-dates','unit-converter','tip-calculator'];
-VIEW_IDS.forEach(id => { const v = el(id); v.id = id; v.classList.add('view'); if (id === 'home') v.classList.add('active'); });
-el('ucType').value = 'length';
 
 const gpaRows = el('gpaRows');
 for (let i = 0; i < 3; i++) {
@@ -63,6 +60,7 @@ for (let i = 0; i < 3; i++) {
   row.appendChild(grade); row.appendChild(credit);
   gpaRows.appendChild(row);
 }
+el('ucType').value = 'length';
 
 const REAL_DATE = Date;
 const FIXED = new REAL_DATE('2026-08-24T12:00:00').getTime();
@@ -71,21 +69,19 @@ class FakeDate extends REAL_DATE {
   static now() { return FIXED; }
 }
 
-const hashHandlers = [];
 const alerts = [];
-const location_ = { protocol: 'file:', origin: '', hash: '' };
-let clipboardCalled = false;
+let clipboardCalled = false, clipLast = '';
 
 const documentMock = {
   getElementById: el,
   createElement: tag => new El(tag),
-  querySelectorAll: sel => sel === '.view' ? VIEW_IDS.map(el) : sel === '.gpaRow' ? gpaRows.children : [],
+  querySelectorAll: sel => sel === '.gpaRow' ? gpaRows.children : [],
   querySelector: sel => documentMock.querySelectorAll(sel)[0] || null
 };
 
 const ctx = {
   document: documentMock,
-  location: location_,
+  location: { protocol: 'file:', origin: '', hash: '' },
   alert: m => alerts.push(String(m)),
   console,
   setTimeout,
@@ -96,23 +92,18 @@ const ctx = {
   Image: class { set src(v) { this._src = v; } get src() { return this._src; } },
   navigator: { clipboard: { writeText: txt => { clipboardCalled = true; clipLast = txt; return Promise.resolve(); } } },
   scrollTo: () => {},
-  addEventListener: (ev, fn) => { if (ev === 'hashchange') hashHandlers.push(fn); }
+  addEventListener: () => {}
 };
-let clipLast = '';
 ctx.window = ctx;
 vm.createContext(ctx);
 
-const mainScript = html.match(/<script>([\s\S]*?)<\/script>/)[1];
-vm.runInContext(mainScript, ctx);
+const APPJS_PATH = path.join(root, 'assets', 'app.js');
+t('structure: assets/app.js exists', fs.existsSync(APPJS_PATH));
+t('structure: assets/style.css exists', fs.existsSync(path.join(root, 'assets/style.css')));
+vm.runInContext(fs.readFileSync(APPJS_PATH, 'utf8'), ctx);
 
 const $ = id => el(id);
 const show = id => $(id).style.display === 'block';
-
-t('route: home is active on load', $('home').classList.contains('active'));
-location_.hash = '#bmi-calculator'; hashHandlers.forEach(f => f());
-t('route: hash navigation switches view', $('bmi-calculator').classList.contains('active') && !$('home').classList.contains('active'));
-location_.hash = '#home'; hashHandlers.forEach(f => f());
-t('route: back to home works', $('home').classList.contains('active'));
 
 $('dob').value = '2000-01-15'; ctx.calcAge();
 t('age: exact Y/M/D', $('ageResult').innerHTML.includes('<b>26</b>') && $('ageResult').innerHTML.includes('<b>7</b>') && $('ageResult').innerHTML.includes('<b>9</b>'));
@@ -229,21 +220,33 @@ t('tip: 1500 + 10% split x2 = 825 each', $('tipResult').innerHTML.includes('<b>8
 alerts.length = 0; $('tipBill').value = '-5'; ctx.calcTip();
 t('tip: rejects negative bill', alerts.some(a => a.includes('bill')));
 
-const seoChecks = [
-  ['canonical tag', /rel="canonical" href="https:\/\/ahatools\.netlify\.app\/"/.test(html)],
-  ['og:title tag', html.includes('property="og:title"')],
-  ['robots meta', html.includes('name="robots" content="index, follow"')],
-  ['13 tool cards linked', [...html.matchAll(/href="#([\w-]+)"/g)].map(m => m[1]).filter(v => v !== 'home').length >= 13],
-];
-seoChecks.forEach(([n, ok]) => t('SEO: ' + n, ok));
-const lds = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
-t('SEO: JSON-LD valid & typed', lds.length === 2 && lds[0]['@type'] === 'WebApplication' && lds[1]['@type'] === 'FAQPage');
+const SLUGS = ['age-calculator','bmi-calculator','loan-calculator','discount-calculator','percentage-calculator','gpa-calculator','word-counter','case-converter','image-compressor','password-generator','days-between-dates','unit-converter','tip-calculator'];
+const titles = new Set();
+for (const slug of SLUGS) {
+  const p = path.join(root, slug, 'index.html');
+  const okExists = fs.existsSync(p);
+  t(`page: /${slug}/ exists`, okExists);
+  if (!okExists) continue;
+  const html = fs.readFileSync(p, 'utf8');
+  t(`page: /${slug}/ canonical + content + assets`, html.includes(`rel="canonical" href="${DOMAIN}/${slug}/"`) && html.includes('About this tool') && html.includes('../assets/app.js') && html.includes('href="../"'));
+  const tm = html.match(/<title>([^<]+)<\/title>/);
+  if (tm) titles.add(tm[1]);
+}
+t('pages: all 13 titles unique', titles.size === SLUGS.length);
+
+const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+t('home: links all 13 real paths', SLUGS.every(s => home.includes(`href="${s}/"`)));
+t('home: no leftover hash anchors to tools', !/#(bmi|age|loan|tip)-?(calculator)?"/.test(home.replace(/Questions people ask/, '')) );
+t('home: JSON-LD valid WebSite w/ 13 hasPart', (() => { const l=[...home.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m=>JSON.parse(m[1])); return l.length===2 && l[0]['@type']==='WebSite' && l[0].hasPart.length===13 && l[1]['@type']==='FAQPage'; })());
+
+const smXml = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
+const locs = [...smXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
+t('sitemap: lists all 14 URLs with domain', locs.length === 14 && locs[0] === DOMAIN + '/' && SLUGS.every(s => locs.includes(`${DOMAIN}/${s}/`)));
 const robotsTxt = fs.readFileSync(path.join(root, 'robots.txt'), 'utf8');
-t('SEO: robots.txt has sitemap ref', robotsTxt.includes('Sitemap:'));
-const sm = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
-t('SEO: sitemap.xml valid & fresh', sm.includes('<?xml') && sm.includes(new Date().toISOString().slice(0, 10)));
-const sitemapRun = execSync('node update-sitemap.mjs', { cwd: root }).toString();
-t('automation: update-sitemap detects 13 tools', sitemapRun.includes('Found 13 tools'));
+t('robots: sitemap ref updated', robotsTxt.includes(`Sitemap: ${DOMAIN}/sitemap.xml`));
+
+const smRun = execSync('node update-sitemap.mjs', { cwd: root }).toString();
+t('automation: update-sitemap detects 13 pages', smRun.includes('Found 13 tool pages'));
 
 console.log(results.join('\n'));
 console.log(`\n${pass} passed, ${fail} failed`);
