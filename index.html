@@ -43,7 +43,9 @@
   "mainEntity": [
     {"@type": "Question", "name": "Are these tools really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every tool on AhaTools is 100% free with no signup required."}},
     {"@type": "Question", "name": "Is my data safe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. All calculations including image compression and password generation run entirely inside your browser. Nothing is uploaded to any server."}},
-    {"@type": "Question", "name": "Do the tools work on mobile?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, AhaTools is designed mobile-first and works on any device."}}
+    {"@type": "Question", "name": "Do the tools work on mobile?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, AhaTools is designed mobile-first and works on any device."}},
+    {"@type": "Question", "name": "Who built AhaTools?", "acceptedAnswer": {"@type": "Answer", "text": "AhaTools is created and maintained by the creator behind the AHA! YouTube channel."}},
+    {"@type": "Question", "name": "Are the calculations accurate?", "acceptedAnswer": {"@type": "Answer", "text": "Every tool uses standard public formulas and is covered by an automated test suite of 56 checks. Calculations run locally in your browser."}}
   ]
 }
 </script>
@@ -104,6 +106,13 @@
   .qa{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin-bottom:10px;box-shadow:var(--shadow)}
   .qa h3{font-size:15.5px}
   .qa p{color:var(--muted);font-size:14px;margin-top:6px}
+  .info{margin-top:24px;border-top:1px solid var(--line);padding-top:6px;font-size:14.5px}
+  .info h3{font-size:15px;margin:18px 0 6px;color:var(--ink)}
+  .info p,.info li{color:#4b5563}
+  .info ol{padding-left:20px;margin-top:4px}
+  .info li{margin:3px 0}
+  .info .q{font-weight:700;margin-top:12px;color:var(--ink)}
+  .info a{color:var(--brand);text-decoration:none;font-weight:600}
   .map{max-width:720px;margin:34px auto 0;text-align:center}
   .map h2{font-size:18px;margin-bottom:12px}
   .map a{display:inline-block;color:var(--muted);text-decoration:none;font-size:13.5px;margin:4px 8px}
@@ -150,6 +159,14 @@
     <div class="qa"><h3>Do they work on my phone?</h3><p>AhaTools is built mobile-first. It works smoothly on any phone, tablet or computer.</p></div>
   </div>
 
+  <div class="faq">
+    <h2>About AhaTools — who's behind this?</h2>
+    <div class="qa"><h3>👋 Who built AhaTools?</h3><p>AhaTools is created and maintained by the creator behind the <a href="https://www.youtube.com/@Shahid-Ul-Islam-z5l">AHA! YouTube channel</a> — built after getting tired of "free calculator" sites buried under popups, fake download buttons and tools that quietly upload your files.</p></div>
+    <div class="qa"><h3>📬 How can I contact you?</h3><p>The fastest way is the comments or community tab on our <a href="https://www.youtube.com/@Shahid-Ul-Islam-z5l">YouTube channel</a>. Tool requests are always welcome — the most requested ones get built.</p></div>
+    <div class="qa"><h3>🔒 Can I trust the results?</h3><p>Yes. Every tool uses standard public formulas (shown on each tool page) and runs locally in your browser using well-tested code with an automated test suite. Nothing you type or upload ever touches a server.</p></div>
+    <div class="qa"><h3>🔄 How often is AhaTools updated?</h3><p>Regularly — new tools and fixes ship based on user feedback. Last updated: <strong>August 2026</strong>.</p></div>
+  </div>
+
   <nav class="map" aria-label="All tools">
     <h2>All 13 tools</h2>
     <a href="#age-calculator">Age Calculator</a>
@@ -177,6 +194,21 @@
     <input type="date" id="dob">
     <button class="btn" onclick="calcAge()">Calculate Age</button>
     <div class="result" id="ageResult"></div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>This age calculator works the same way official offices do — full calendar years first, then leftover months, then days. People use it for birthday planning, school/admission forms, visa and job applications where you must state age in exact years, months and days.</p>
+      <h3>How to use it</h3>
+      <ol>
+        <li>Pick your date of birth in the box above.</li>
+        <li>Press <strong>Calculate Age</strong> — no clicking through dropdowns needed.</li>
+        <li>Want total days lived instead? Use our <a href="#days-between-dates">Days Between Dates</a> tool with your birth date as the start.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">How is age calculated exactly?</p>
+      <p>It counts complete calendar years between your birth date and today, then remaining whole months, then remaining days — borrowing days from the previous month when needed (e.g. from Aug 30 to Aug 24 next year gives 11 months and 25 days).</p>
+      <p class="q">Why do some sites show a different age?</p>
+      <p>Sites that divide total days by 365.25 get slightly wrong month/day values. Calendar-accurate counting like this one matches what appears on official documents.</p>
+    </div>
   </div>
 </section>
 
@@ -191,6 +223,21 @@
     </div>
     <button class="btn" onclick="calcBmi()">Calculate BMI</button>
     <div class="result" id="bmiResult"></div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>BMI (Body Mass Index) is the screening measure recommended by the World Health Organization to check whether your weight is in a healthy range for your height. It takes seconds, needs only a tape-measure-free height value in centimetres and weight in kilograms.</p>
+      <h3>How to use it</h3>
+      <ol>
+        <li>Enter height in cm (e.g. 170) and weight in kg (e.g. 65).</li>
+        <li>Your BMI shows instantly with its WHO category: under 18.5 underweight · 18.5–24.9 normal · 25–29.9 overweight · 30+ obese.</li>
+        <li>The result also shows the healthy weight range for your exact height.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">What is the BMI formula?</p>
+      <p>BMI = weight (kg) ÷ height² (m²). For example 65 kg at 1.70 m → 65 ÷ 2.89 = 22.5.</p>
+      <p class="q">Is BMI accurate for athletes?</p>
+      <p>Not perfectly — muscle weighs more than fat, so very muscular people can score "overweight" while being healthy. Treat BMI as a quick screening number, not a medical diagnosis; for body composition ask a professional.</p>
+    </div>
   </div>
 </section>
 
@@ -206,6 +253,21 @@
     </div>
     <button class="btn" onclick="calcEmi()">Calculate EMI</button>
     <div class="result" id="emiResult"></div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>EMI (Equated Monthly Instalment) is the fixed amount you pay a bank every month on a loan. This calculator shows that payment before you sign anything — plus the total interest you'll pay over the full duration, which banks don't highlight upfront.</p>
+      <h3>How to use it</h3>
+      <ol>
+        <li>Enter loan amount, annual interest rate and duration in years.</li>
+        <li>Check the monthly EMI — compare it against your monthly income (most advisors say keep it under 40%).</li>
+        <li>Look at <em>Total interest</em>: try shortening the duration and watch how much money it saves.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">What is the EMI formula?</p>
+      <p>EMI = P × r × (1+r)ⁿ ÷ ((1+r)ⁿ − 1), where P = principal, r = monthly rate (annual ÷ 12 ÷ 100), n = months. It's the standard reducing-balance formula used by banks worldwide.</p>
+      <p class="q">How can I pay less interest overall?</p>
+      <p>Two proven levers: shorter tenure (biggest saving) and prepayments early in the loan, when most of each EMI is still interest. Compare scenarios above before committing.</p>
+    </div>
   </div>
 </section>
 
@@ -220,6 +282,21 @@
     </div>
     <button class="btn" onclick="calcDisc()">Calculate Discount</button>
     <div class="result" id="discResult"></div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>Sale tags are designed to confuse. This discount calculator tells you the real final price and exact savings instantly — useful during sales seasons, market bargaining, or checking whether a "70% OFF!" deal is actually good.</p>
+      <h3>How to use it</h3>
+      <ol>
+        <li>Type the original price and the discount percentage.</li>
+        <li>Read what you'll actually pay at checkout.</li>
+        <li>Comparing two offers? Run both here instead of doing mental math.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">What's the formula?</p>
+      <p>Final price = price × (1 − discount ÷ 100). On 2,000 with 25% off: 2000 × 0.75 = 1,500 saved 500.</p>
+      <p class="q">Is 25% + 10% off equal to 35% off?</p>
+      <p>No — stores apply them one after another: 25% then 10% of the reduced price equals only 32.5% total. Chain them through this tool twice to see real stacked prices, and use our <a href="#percentage-calculator">Percentage Calculator</a> for other comparisons.</p>
+    </div>
   </div>
 </section>
 
@@ -237,6 +314,21 @@
     <label>Percent change from <input type="number" id="p3a" style="width:110px;display:inline-block" value="80"> to
       <input type="number" id="p3b" style="width:110px;display:inline-block" value="100"></label>
     <div class="result" id="p3r"></div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>Percentages trip everyone up because there are three different everyday questions — "what's X% of Y", "X is what percent of Y" and "how much did it change". This page answers all three live as you type, no button needed.</p>
+      <h3>The three calculations</h3>
+      <ol>
+        <li><strong>X% of Y</strong> — tips, taxes, commissions. Example: 10% of 200 = 20.</li>
+        <li><strong>X is what % of Y</strong> — test scores, market share. Example: 45 of 200 = 22.5%.</li>
+        <li><strong>% change</strong> — price rises, growth reports. Example: 80 → 100 = +25% increase.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">What is the percentage change formula?</p>
+      <p>((new − old) ÷ |old|) × 100. Going from 80 to 100 is (20 ÷ 80) × 100 = 25% up; the reverse is −20%, because percentages aren't symmetric.</p>
+      <p class="q">Where does this help daily?</p>
+      <p>Restaurant bills, exam marks, salary hike offers, discount stacking (see our <a href="#discount-calculator">Discount Calculator</a>) and loan interest comparisons.</p>
+    </div>
   </div>
 </section>
 
@@ -262,6 +354,21 @@
     <button class="btn btn-sm" onclick="addGpaRow()">+ Add another course</button>
     <button class="btn" onclick="calcGpa()">Calculate GPA</button>
     <div class="result" id="gpaResult"></div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>This GPA calculator computes your credit-weighted grade point average on the standard 4.00 scale used by most universities in the US, Bangladesh, Pakistan and beyond. Credits matter: an A in a 4-credit course moves your GPA more than an A in a 1-credit lab.</p>
+      <h3>How to use it</h3>
+      <ol>
+        <li>Pick a letter grade and credit hours for each course.</li>
+        <li>Add more rows for extra courses with one click.</li>
+        <li>Your GPA appears instantly weighted by credits.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">What's the formula?</p>
+      <p>GPA = Σ(grade points × credits) ÷ Σ(credits). Grade points: A=4.00, A−=3.70, B+=3.30, B=3.00, C+=2.30, C=2.00, D=1.00, F=0.</p>
+      <p class="q">Is GPA the same as CGPA?</p>
+      <p>GPA covers one semester; CGPA averages all semesters so far. Calculate each semester here, then average them credit-weighted for CGPA. Some universities use different scales — check yours before applying scholarships.</p>
+    </div>
   </div>
 </section>
 
@@ -276,6 +383,21 @@
       <div class="stat"><div class="n" id="stChars">0</div><div class="t">Characters</div></div>
       <div class="stat"><div class="n" id="stSent">0</div><div class="t">Sentences</div></div>
       <div class="stat"><div class="n" id="stRead">0 min</div><div class="t">Reading time</div></div>
+    </div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>Students checking essay limits, writers meeting deadlines, and anyone posting where characters are capped — this counter shows words, characters, sentences and estimated reading time live as you type or paste. Your text stays on your device; nothing is uploaded.</p>
+      <h3>How to use it</h3>
+      <ol>
+        <li>Paste or type into the box — stats update instantly.</li>
+        <li>Characters count includes spaces (what most forms and social platforms measure).</li>
+        <li>Reading time assumes an average adult pace of ~200 words per minute.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">Do characters include spaces?</p>
+      <p>Yes — the character figure counts every letter, space and punctuation mark, which is what Twitter/X, SMS gates and meta-description limits actually enforce.</p>
+      <p class="q">How accurate is reading time?</p>
+      <p>It's a solid estimate for general audiences at 200 wpm. Technical content runs slower (~150 wpm), casual posts faster. Writing something long? Track sentence variety too — short sentences read faster than the math suggests.</p>
     </div>
   </div>
 </section>
@@ -293,6 +415,21 @@
       <button class="chip" onclick="convertCase('sentence')">Sentence case</button>
     </div>
     <button class="btn btn-sm" id="caseCopy" onclick="copyCase()">📋 Copy result</button>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>Fixing ALL-CAPS text someone sent you, formatting headlines, or cleaning up data entries — this converter switches between UPPERCASE, lowercase, Title Case and Sentence Case in one click, then copies the fixed version straight to your clipboard.</p>
+      <h3>The four modes</h3>
+      <ol>
+        <li><strong>UPPERCASE / lowercase</strong> — for codes, headings, or calming down shouty emails.</li>
+        <li><strong>Title Case</strong> — capitalizes Each Word, ideal for video titles and product names.</li>
+        <li><strong>Sentence case</strong> — capitalizes the first letter of each sentence only; best for body paragraphs.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">When should I use Title Case vs Sentence case?</p>
+      <p>Title Case for titles, headlines and YouTube video names; Sentence case for descriptions and paragraphs — it's easier to read in long form.</p>
+      <p class="q">Does it work with any language?</p>
+      <p>Fully for English text. For mixed Bengali/English content the English parts convert correctly while other scripts pass through unchanged.</p>
+    </div>
   </div>
 </section>
 
@@ -307,6 +444,21 @@
     <input type="range" class="range" id="imgQ" min="10" max="95" value="70" oninput="document.getElementById('qVal').textContent=this.value">
     <button class="btn" onclick="compressImg()">Compress & Download</button>
     <div class="result" id="imgResult"></div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>Photos from phones are often 3–8 MB — too big for forms, email limits and slow websites. This compressor shrinks them to a fraction of the size, and because everything happens on your device via HTML Canvas, your pictures are never uploaded anywhere.</p>
+      <h3>How to use it</h3>
+      <ol>
+        <li>Choose an image (JPG or PNG).</li>
+        <li>Pick quality: 60–75% is the sweet spot — visually identical for photos at half the size.</li>
+        <li>Compress & Download — very large images are also resized down to max 1600px, perfect for web use.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">Which quality should I choose?</p>
+      <p>70% suits most photos. Go 85–95% for prints or text-heavy images; below 50% you'll start seeing blur around sharp edges.</p>
+      <p class="q">Why did my PNG get bigger/smaller than expected?</p>
+      <p>Output is JPEG, which compresses photographs extremely well but flattens transparency. For logos with transparent backgrounds, keep the original PNG instead.</p>
+    </div>
   </div>
 </section>
 
@@ -325,6 +477,21 @@
     <div class="pwbox" id="pwOut">Click generate ↓</div>
     <button class="btn btn-sm" onclick="genPass()">🎲 Generate</button>
     <button class="btn btn-sm" onclick="copyPw()">📋 Copy</button>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>Weak passwords are behind most account takeovers. This generator uses your browser's cryptographic random number generator (Web Crypto API) — the same standard used by security software — and creates passwords that never leave your device because there's no server to send them to.</p>
+      <h3>How to make a strong password here</h3>
+      <ol>
+        <li>Keep length at 16+ characters — length beats complexity every time.</li>
+        <li>Leave all character sets checked for maximum strength.</li>
+        <li>Generate → Copy → paste into the site's password field. Save it in a password manager.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">Is this password stored anywhere?</p>
+      <p>No. It exists only in your browser tab's memory until you close it. There's no logging, no server, no database — verify by going offline: it still works identically.</p>
+      <p class="q">Can hackers guess crypto-random passwords?</p>
+      <p>Not practically. A 16-character random password has ~10²⁵ combinations; at a trillion guesses per second that's over 80 million years of average search time.</p>
+    </div>
   </div>
 </section>
 
@@ -339,6 +506,21 @@
     </div>
     <button class="btn" onclick="diffDates()">Calculate Difference</button>
     <div class="result" id="diffResult"></div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>A precise days-between-dates counter for exam countdowns, project deadlines, visa stays, pregnancy weeks or "how long have we been together" — handling leap years and different month lengths correctly, which mental math always gets wrong.</p>
+      <h3>How to use it</h3>
+      <ol>
+        <li>Pick the two dates — order doesn't matter, negatives are impossible.</li>
+        <li>You get total days plus a years/months/days breakdown and week count.</li>
+        <li>Counting age in total days? Use your birth date as the start.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">Are leap years counted?</p>
+      <p>Yes — real calendar arithmetic, so Feb 29, century rules and 31-day months are all handled exactly. Example: Feb 28 → Mar 1, 2024 correctly equals 2 days.</p>
+      <p class="q">Does it count business days?</p>
+      <p>Total days only for now. Quick manual rule: divide by 7 and subtract ~4.3 weekends per month for rough working-day estimates.</p>
+    </div>
   </div>
 </section>
 
@@ -360,6 +542,21 @@
     <input type="number" id="ucVal" placeholder="1">
     <button class="btn" onclick="convertUnits()">Convert</button>
     <div class="result" id="ucResult"></div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>Converts length (m, km, cm, mm, mile, foot, inch, yard) and weight (kg, g, lb, oz, tonne) using internationally exact factors — not rounded approximations — so results match engineering and shipping requirements.</p>
+      <h3>How to use it</h3>
+      <ol>
+        <li>Pick Length or Weight.</li>
+        <li>Choose the from/to units and enter a value.</li>
+        <li>Result appears with up to 6 decimal places of precision.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">What conversion factors are used?</p>
+      <p>The exact international ones: 1 inch = 0.0254 m, 1 mile = 1609.344 m, 1 lb = 0.45359237 kg, 1 oz = 0.028349523 kg — same values defined by NIST standards.</p>
+      <p class="q">Why do other sites show slightly different numbers?</p>
+      <p>They round the factors first (like 1 lb ≈ 0.454), which introduces error that grows with big values. This tool converts from exact base units instead.</p>
+    </div>
   </div>
 </section>
 
@@ -382,6 +579,21 @@
     </div>
     <button class="btn" onclick="calcTip()">Calculate</button>
     <div class="result" id="tipResult"></div>
+    <div class="info">
+      <h3>About this tool</h3>
+      <p>Dinner with friends shouldn't end with five people doing mental math over one receipt. Enter the bill, choose tip %, set how many are splitting — everyone sees their exact share including tip in one number.</p>
+      <h3>How to use it</h3>
+      <ol>
+        <li>Enter total bill amount and number of people.</li>
+        <li>Slide the tip (or tap 5/10/15/20% quick chips).</li>
+        <li>Per-person amount shows instantly — no rounding arguments left.</li>
+      </ol>
+      <h3>FAQ</h3>
+      <p class="q">How much should I tip?</p>
+      <p>It's cultural: 15–20% is standard at US restaurants; in many countries including Bangladesh service is included and tipping is optional appreciation for good service. The slider covers whatever your situation calls for.</p>
+      <p class="q">Should the tip be split equally?</p>
+      <p>Equal splitting per person is the default here because it's how groups usually settle. If one person ordered significantly more, calculate their share separately with our <a href="#percentage-calculator">Percentage Calculator</a>.</p>
+    </div>
   </div>
 </section>
 
