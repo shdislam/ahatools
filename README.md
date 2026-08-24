@@ -2,7 +2,7 @@
 
 13 free online tools in a single-file website — no backend, no frameworks, no build step.
 
-**Live site:** _coming soon_ · **YouTube tutorials:** [@Shahid-Ul-Islam-z5l](https://www.youtube.com/@Shahid-Ul-Islam-z5l)
+**Live site:** [shdislam.github.io/ahatools](https://shdislam.github.io/ahatools/) · **YouTube tutorials:** [@Shahid-Ul-Islam-z5l](https://www.youtube.com/@Shahid-Ul-Islam-z5l)
 
 ## Tools
 | | | |
