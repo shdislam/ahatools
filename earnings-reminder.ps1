@@ -1,0 +1,2 @@
+Add-Type -AssemblyName System.Windows.Forms
+[System.Windows.Forms.MessageBox]::Show("It has been 6 months since AhaTools launched!`n`nTime to check if your tools are earning:`n`n1. Open Google AdSense -> check estimated earnings`n2. Open YouTube Studio -> check monetization progress`n3. Open Netlify analytics -> check visitor traffic`n`nIf traffic is low: post more Shorts linking to the site.`nKeep going - compounding takes months, not days!", "AhaTools Earnings Reminder", "OK", "Information")
