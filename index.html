@@ -408,13 +408,14 @@ function fillUnits(){
 function convertUnits(){
   const t=UNITS[document.getElementById('ucType').value],v=parseFloat(document.getElementById('ucVal').value);
   const f=document.getElementById('ucFrom').value,to=document.getElementById('ucTo').value,r=document.getElementById('ucResult');
-  if(isNaN(v)){return}
+  if(isNaN(v)){r.style.display='none';return}
   r.innerHTML=`<b>${v} ${f}</b> = <b>${(v*t[f]/t[to]).toLocaleString(undefined,{maximumFractionDigits:6})} ${to}</b>`;
   r.style.display='block';
 }
 function calcAge(){
   const d=new Date(document.getElementById('dob').value),r=document.getElementById('ageResult');
   if(!d.getTime()){r.style.display='none';return}
+  if(d>new Date()){r.innerHTML='🚼 That date is in the future!';r.style.display='block';return}
   const n=new Date();let y=n.getFullYear()-d.getFullYear(),m=n.getMonth()-d.getMonth(),day=n.getDate()-d.getDate();
   if(day<0){m--;day+=new Date(n.getFullYear(),n.getMonth(),0).getDate()}
   if(m<0){y--;m+=12}
@@ -423,7 +424,7 @@ function calcAge(){
 }
 function calcBmi(){
   const h=parseFloat(document.getElementById('bmiH').value)/100,w=parseFloat(document.getElementById('bmiW').value),r=document.getElementById('bmiResult');
-  if(!h||!w){return}
+  if(!h||!w||h<=0||w<=0){alert('Enter valid height and weight');return}
   const bmi=w/(h*h);
   let c=bmi<18.5?'Underweight':bmi<25?'Normal ✅':bmi<30?'Overweight':'Obese';
   r.innerHTML=`Your BMI is <b>${bmi.toFixed(1)}</b> — <b>${c}</b><br><small>Healthy range for your height: ${(18.5*h*h).toFixed(1)}–${(24.9*h*h).toFixed(1)} kg</small>`;
@@ -440,14 +441,14 @@ function calcEmi(){
 }
 function calcDisc(){
   const p=parseFloat(document.getElementById('discPrice').value),d=parseFloat(document.getElementById('discPct').value),r=document.getElementById('discResult');
-  if(isNaN(p)||isNaN(d)){alert('Fill both fields');return}
+  if(isNaN(p)||isNaN(d)||p<=0||d<0||d>100){alert('Enter a valid price and discount between 0 and 100');return}
   const save=p*d/100;
   r.innerHTML=`You pay: <b>${(p-save).toLocaleString(undefined,{maximumFractionDigits:2})}</b><br><small>You save <b>${save.toLocaleString(undefined,{maximumFractionDigits:2})}</b> (${d}% off)</small>`;
   r.style.display='block';
 }
 function pct(){
   const g=id=>parseFloat(document.getElementById(id).value);
-  const s=(id,v)=>{const e=document.getElementById(id);e.textContent=v;e.style.display='block'};
+  const s=(id,v)=>{const e=document.getElementById(id);e.innerHTML=v;e.style.display='block'};
   let a=g('p1a'),b=g('p1b');if(!isNaN(a)&&!isNaN(b))s('p1r',`Answer: <b>${(a*b/100).toLocaleString()}</b>`);
   a=g('p2a');b=g('p2b');if(!isNaN(a)&&!isNaN(b)&&b!==0)s('p2r',`Answer: <b>${(a/b*100).toFixed(2)}%</b>`);
   a=g('p3a');b=g('p3b');if(!isNaN(a)&&!isNaN(b)&&a!==0)s('p3r',`Change: <b>${(((b-a)/Math.abs(a))*100).toFixed(2)}%</b> ${b>=a?'📈 increase':'📉 decrease'}`);
@@ -539,7 +540,7 @@ function setTip(v){
 }
 function calcTip(){
   const bill=parseFloat(document.getElementById('tipBill').value),ppl=Math.max(1,parseInt(document.getElementById('tipPeople').value)||1),t=+document.getElementById('tipPct').value,r=document.getElementById('tipResult');
-  if(isNaN(bill)){alert('Enter bill amount');return}
+  if(isNaN(bill)||bill<=0){alert('Enter a valid bill amount');return}
   const tip=bill*t/100,total=bill+tip;
   r.innerHTML=`Per person: <b>${(total/ppl).toLocaleString(undefined,{maximumFractionDigits:2})}</b><br><small>Tip: ${tip.toLocaleString(undefined,{maximumFractionDigits:2})} · Total: ${total.toLocaleString(undefined,{maximumFractionDigits:2})} · Split between ${ppl}</small>`;
   r.style.display='block';
