@@ -6,14 +6,33 @@ const DOMAIN = 'https://ahatools.pages.dev';
 const TODAY = new Date().toISOString().slice(0, 10);
 
 const src = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const migrated = !/<style>/.test(src);
 
-const css = src.match(/<style>([\s\S]*?)<\/style>/)[1].replace(/\s*$/, '\n  .panel h1{font-size:22px;margin-bottom:4px}\n');
-let js = src.match(/<script>([\s\S]*?)<\/script>/)[1];
-js = js.replace(/if\(location\.protocol[\s\S]*?\n}\n/, '').replace(/\nfunction route\(\)\{[\s\S]*?\n\}\n/, '').replace(/window\.addEventListener\('hashchange',route\);\nroute\(\);\n/, '');
+let css, js, sections = {};
+if (migrated) {
+  css = fs.readFileSync(path.join(root, 'assets', 'style.css'), 'utf8');
+  js = fs.readFileSync(path.join(root, 'assets', 'app.js'), 'utf8');
+} else {
+  css = src.match(/<style>([\s\S]*?)<\/style>/)[1].replace(/\s*$/, '\n  .panel h1{font-size:22px;margin-bottom:4px}\n');
+  js = src.match(/<script>([\s\S]*?)<\/script>/)[1];
+  js = js.replace(/if\(location\.protocol[\s\S]*?\n}\n/, '').replace(/\nfunction route\(\)\{[\s\S]*?\n\}\n/, '').replace(/window\.addEventListener\('hashchange',route\);\nroute\(\);\n/, '');
+}
 
-const sections = {};
 for (const m of src.matchAll(/<section id="([\w-]+)" class="view">([\s\S]*?)<\/section>/g)) {
   if (m[1] !== 'home') sections[m[1]] = m[2];
+}
+if (migrated) {
+  for (const f of fs.readdirSync(root, { withFileTypes: true }).filter(d => d.isDirectory() && fs.existsSync(path.join(root, d.name, 'index.html')) && !['assets', 'tests', 'node_modules', '.git'].includes(d.name))) {
+    const html = fs.readFileSync(path.join(root, f.name, 'index.html'), 'utf8');
+    const pm = html.match(/<div class="panel">([\s\S]*?)\n<nav class="map"/);
+    if (!pm) continue;
+    let body = pm[1];
+    const openTag = '<div class="panel">';
+    const startIdx = body.indexOf(openTag);
+    if (startIdx !== -1) body = body.slice(startIdx + openTag.length);
+    body = body.replace(/(?:<\/div>)+\s*$/,'').replace(/<\/h1>/g,'</h2>').replace(/<h1>/g,'<h2>').trim();
+    sections[f.name] = '\n<button class="back" onclick="location.hash=\'home\'">← All tools</button>\n<div class="panel">' + body + '\n</div>\n';
+  }
 }
 
 const TOOLS = [
@@ -81,7 +100,7 @@ ${head(t, 1, jsonld)}
 <body>
 ${headerBar(1)}
 <main class="wrap">
-<div class="panel">${inner.trim()}</div>
+${inner.trim()}
 <nav class="map" aria-label="More tools"><h2>More free tools</h2>${TOOLS.filter(x => x.id !== t.id).slice(0, 6).map(x => `<a href="../${x.id}/">${x.icon} ${x.name}</a>`).join('\n')}<a href="../">View all 13 →</a></nav>
 </main>
 ${footerBar}
