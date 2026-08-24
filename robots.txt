@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ahatools.pages.dev/sitemap.xml
+Sitemap: https://shdislam.github.io/ahatools/sitemap.xml

@@ -7,7 +7,7 @@ import { webcrypto } from 'crypto';
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(dir, '..');
-const DOMAIN = 'https://ahatools.pages.dev';
+const DOMAIN = 'https://shdislam.github.io/ahatools';
 
 let pass = 0, fail = 0;
 const results = [];

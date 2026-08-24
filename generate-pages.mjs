@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const root = path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1'));
-const DOMAIN = 'https://ahatools.pages.dev';
+const DOMAIN = 'https://shdislam.github.io/ahatools';
 const TODAY = new Date().toISOString().slice(0, 10);
 
 const src = fs.readFileSync(path.join(root, 'index.html'), 'utf8');

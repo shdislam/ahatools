@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const root = path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1'));
-const DOMAIN_DEFAULT = 'https://ahatools.pages.dev';
+const DOMAIN_DEFAULT = 'https://shdislam.github.io/ahatools';
 
 const toolDirs = fs.readdirSync(root, { withFileTypes: true })
   .filter(d => d.isDirectory() && !['assets', 'tests', 'node_modules', '.git'].includes(d.name) && fs.existsSync(path.join(root, d.name, 'index.html')))
